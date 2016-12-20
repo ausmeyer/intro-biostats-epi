@@ -1,0 +1,2707 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Biostatistics and Epidemiology</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Biostatistics and Epidemiology">
+  <meta name="author" content="Austin Meyer, PhD">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/interactive/css/aceeditor.css"></link>
+<link rel=stylesheet href="libraries/widgets/nvd3/css/nv.d3.css"></link>
+<link rel=stylesheet href="libraries/widgets/nvd3/css/rNVD3.css"></link>
+<link rel=stylesheet href="libraries/widgets/leaflet/external/leaflet.css"></link>
+<link rel=stylesheet href="libraries/widgets/leaflet/external/leaflet-rCharts.css"></link>
+<link rel=stylesheet href="libraries/widgets/leaflet/external/legend.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="./assets/css/style.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  <script src="libraries/widgets/nvd3/js/jquery-1.8.2.min.js"></script>
+<script src="libraries/widgets/nvd3/js/d3.v3.min.js"></script>
+<script src="libraries/widgets/nvd3/js/nv.d3.min-new.js"></script>
+<script src="libraries/widgets/nvd3/js/fisheye.js"></script>
+<script src="libraries/widgets/leaflet/external/leaflet.js"></script>
+<script src="libraries/widgets/leaflet/external/leaflet-providers.js"></script>
+<script src="libraries/widgets/leaflet/external/Control.FullScreen.js"></script>
+
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+      <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/tt.png">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/tt.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Biostatistics and Epidemiology</h1>
+    <h2>A brief introduction</h2>
+    <p>Austin Meyer, PhD<br/>MS4</p>
+  </hgroup>
+    <a href="https://github.com/ausmeyer/intro-biostats-epi/zipball/gh-pages" class="example">
+     Download
+    </a>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <!-- Limit image width and height -->
+
+<style type="text/css">
+img {     
+  max-height: 475px;     
+}
+body {background:grey transparent;
+</style>
+
+<h2>Roadmap - This is just a guess</h2>
+
+<ul>
+<li>Biostatistics - 20 minutes
+
+<ul>
+<li>Accuracy versus Precision - 2 minutes</li>
+<li>Statistical Inference - 3 minutes</li>
+<li>Distributions - 5 minutes</li>
+<li>Hypothesis Testing - 10 minutes</li>
+</ul></li>
+<li>Epidemiology - 40 minutes
+
+<ul>
+<li>Types of Prevention and Outbreaks - 4 minutes</li>
+<li>Measures of Morbidity and Mortality - 5 minutes</li>
+<li>Validity and Reliability of Clinical Tests - 6 minutes</li>
+<li>Measures of Risk - 10 minutes</li>
+<li>Epidemiological Biases - 5 minutes</li>
+<li>Types of Studies - 10 minutes</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Biostatistics</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3">
+<hgroup>
+  <h2>There are some important random terms</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul class = "build incremental">
+<li>Generalizability
+
+<ul>
+<li>How applicable is a finding to the general population
+<br></li>
+</ul></li>
+<li>P-value
+
+<ul>
+<li>Probability of finding a value this extreme by random chance
+<br></li>
+</ul></li>
+<li>Confidence Interval
+
+<ul>
+<li>Interval over which population value is found with a specified probability (e.g. 95%)
+<br></li>
+</ul></li>
+<li>Efficacy
+
+<ul>
+<li>Performance of treatment under ideal circumstances
+<br></li>
+</ul></li>
+<li>Effectiveness
+
+<ul>
+<li>Performance of treatment under real world circumstances</li>
+</ul></li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-4">
+<hgroup>
+  <h2>Precision is repeatability, Accuracy is closeness</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/precision_accuracy.png" alt=""></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="segue" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Describing Distributions</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Statistical distributions have invariant properties</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Question #1</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>Investigators are studying prostate specific antigen (PSA) as a predictor for prostate cancer. To make the statistics easier, they are going to assume that PSA is a normally distributed population variable. Which of the following is correct under their assumption?</p>
+
+<ol>
+<li>Mode is greater than median</li>
+<li>Median is greater than mode</li>
+<li>95% CI depends on degrees of freedom</li>
+<li><em>Median is equal to mean</em></li>
+<li>Mean is equal to standard deviation</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>The normal distribution is unimodal and symmetric.</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>The important invariant properties (for you) of normal distributions are the following:</p>
+
+<ol>
+<li>Mean = Median = Mode</li>
+<li>Unimodal</li>
+<li>Symmetric</li>
+<li>Area under curve is 1</li>
+<li>Constant relationship between standard deviation and percentiles</li>
+</ol>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Real distributions can have one or multiple peaks</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Skew describes the direction of the tail</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Question #2</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p><img src="assets/fig/unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7"></p>
+
+  </div>
+  <div class='span6'>
+    <div class="quiz quiz-single well new">
+      <p>Which of the following corresponds to the measures of central tendency on the graph from <strong>left to right</strong>? </p>
+
+<ol>
+<li>mean, median, mode</li>
+<li>mode, mean, median</li>
+<li>median, mode, mean</li>
+<li><em>mode, median, mean</em></li>
+<li>mean, mode, median</li>
+</ol>
+
+      <button class="quiz-submit btn btn-primary">Submit</button>
+      <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+      <button class="quiz-show-answer btn btn-success">Show Answer</button>
+      <button class="quiz-clear btn btn-danger">Clear</button>
+      
+      <div class="quiz-hint">
+  <p>Mode is most common, median is middle, mean is average value.</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>Always remember that the y-axis on these plots are counts or frequency. Therefore, which line is closest to the peak on the y-axis is the mode. The median is <strong>always</strong> in the middle. The mean is the most susceptible to outliers so in a skewed distribution it will <strong>always</strong> be farthest out on the tail.</p>
+
+</div>
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Hypothesis Testing</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12">
+<hgroup>
+  <h2>The null hypothesis (\(H_0\)) is always the default</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul class = "build incremental">
+<li>Assume:
+
+<ul>
+<li>There are two or more groups being compared, or </li>
+<li>One group being compared to zero, or</li>
+<li>One group is being compared to expectation.
+<br><br></li>
+</ul></li>
+<li>For Step 1, probably safe to assume null is always rejected with \(p < 0.05\).
+
+<ul>
+<li>For ratios (e.g. Relative Risk, Odds Ratio), a 95% CI <strong>not</strong> overlapping 1 is significant.</li>
+<li>For two sample tests, it is less straightforward how the CI relates to the p-value
+<br><br></li>
+</ul></li>
+<li>Once \(H_0\) is rejected, we accept the alternative hypothesis \(H_A\).</li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>T-test compares means of one or two groups</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><br><br></p>
+
+<ul class = "build incremental">
+<li>One sample: \(H_0\) = There is no difference between group mean and zero
+<br><br></li>
+<li>Two sample: \(H_0\) = There is no difference between the disease and no disease groups
+<br><br></li>
+<li>Paired: \(H_0\) = The difference of a measured variable between two time points on the same individuals is zero</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<div class="centered"><font size="7">Will the plot be significant?</font size></div>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-15">
+<hgroup>
+  <h2>T-test compares means of one or two groups</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul>
+<li>Two sample: \(H_0\) = There is no difference between the disease and no disease groups
+<br></li>
+<li><p>Run the t-test</p>
+
+<pre><code class="r">norm1 &lt;- rnorm(5000, mean = 4.75, sd = 1.2)
+norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
+(t.test(norm1, norm2))$p.value
+</code></pre>
+
+<pre><code>## [1] 4.687206e-88
+</code></pre>
+
+<ul class = "build incremental">
+<li>Have we rejected the null hypothesis?
+<br></li>
+<li>Yes, we have accepted \(H_A\). There is a difference between disease and no disease groups.</li>
+</ul></li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-16">
+<hgroup>
+  <h2>Chi-squared test uses categorical (count) data</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul class = "build incremental">
+<li>Two common tests
+
+<ul>
+<li>Goodness-of-fit</li>
+<li>Test of independence</li>
+</ul></li>
+<li>Goodness-of-fit
+
+<ul>
+<li>\(H_0\): The number of cases occuring in a subgroup is consistent with expected</li>
+<li>\(H_A\): The number of cases occuring in a subgroup is not consistent with expected</li>
+</ul></li>
+<li>Test of independence
+
+<ul>
+<li>\(H_0\): Categorical variable A and categorical variable B are independent</li>
+<li>\(H_A\): Categorical variable A and categorical variable B are not independent</li>
+</ul></li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-17">
+<hgroup>
+  <h2>Always expect a contingency table for chi-squared</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<table><thead>
+<tr>
+<th></th>
+<th align="right">Healthy</th>
+<th align="right">Disease</th>
+<th align="right">Total</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Exposed</td>
+<td align="right">40</td>
+<td align="right">60</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td>Not Exposed</td>
+<td align="right">500</td>
+<td align="right">400</td>
+<td align="right">900</td>
+</tr>
+<tr>
+<td>Total</td>
+<td align="right">540</td>
+<td align="right">460</td>
+<td align="right">1000</td>
+</tr>
+</tbody></table>
+
+<p>Table 1: A 2x2 contingency table</p>
+
+<table><thead>
+<tr>
+<th>Exposure Status</th>
+<th align="right">Never Sick</th>
+<th align="right">Sometimes Sick</th>
+<th align="right">Mostly Sick</th>
+<th align="right">Total</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>High</td>
+<td align="right">10</td>
+<td align="right">20</td>
+<td align="right">180</td>
+<td align="right">210</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td align="right">20</td>
+<td align="right">100</td>
+<td align="right">20</td>
+<td align="right">140</td>
+</tr>
+<tr>
+<td>Low</td>
+<td align="right">100</td>
+<td align="right">40</td>
+<td align="right">10</td>
+<td align="right">150</td>
+</tr>
+<tr>
+<td>Total</td>
+<td align="right">130</td>
+<td align="right">160</td>
+<td align="right">210</td>
+<td align="right">500</td>
+</tr>
+</tbody></table>
+
+<p>Table 2: A 3x3 contingency table</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-18">
+<hgroup>
+  <h2>The contingency table can be of any size</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<table><thead>
+<tr>
+<th>Exposure Status</th>
+<th align="right">Never Sick</th>
+<th align="right">Infrequently Sick</th>
+<th align="right">Sometimes Sick</th>
+<th align="right">Mostly Sick</th>
+<th align="right">Always Sick</th>
+<th align="right">Total</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Super High</td>
+<td align="right">10</td>
+<td align="right">90</td>
+<td align="right">34</td>
+<td align="right">12</td>
+<td align="right">12</td>
+<td align="right">158</td>
+</tr>
+<tr>
+<td>Very High</td>
+<td align="right">30</td>
+<td align="right">345</td>
+<td align="right">54</td>
+<td align="right">43</td>
+<td align="right">21</td>
+<td align="right">493</td>
+</tr>
+<tr>
+<td>High</td>
+<td align="right">70</td>
+<td align="right">57</td>
+<td align="right">67</td>
+<td align="right">65</td>
+<td align="right">32</td>
+<td align="right">291</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td align="right">200</td>
+<td align="right">33</td>
+<td align="right">87</td>
+<td align="right">25</td>
+<td align="right">42</td>
+<td align="right">387</td>
+</tr>
+<tr>
+<td>Low</td>
+<td align="right">130</td>
+<td align="right">89</td>
+<td align="right">58</td>
+<td align="right">45</td>
+<td align="right">56</td>
+<td align="right">378</td>
+</tr>
+<tr>
+<td>Very Low</td>
+<td align="right">100</td>
+<td align="right">54</td>
+<td align="right">36</td>
+<td align="right">23</td>
+<td align="right">78</td>
+<td align="right">291</td>
+</tr>
+<tr>
+<td>Super Low</td>
+<td align="right">90</td>
+<td align="right">23</td>
+<td align="right">36</td>
+<td align="right">63</td>
+<td align="right">8</td>
+<td align="right">220</td>
+</tr>
+<tr>
+<td>Total</td>
+<td align="right">530</td>
+<td align="right">691</td>
+<td align="right">372</td>
+<td align="right">276</td>
+<td align="right">249</td>
+<td align="right">2118</td>
+</tr>
+</tbody></table>
+
+<p>Table 3: A 7x5 contingency table</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-19">
+<hgroup>
+  <h2>Pearson correlation compares two variables</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p>The correlation can be positive or negative</p>
+
+<p><img src="assets/fig/unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10"></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>For correlation, r is the critical statistic</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><br></p>
+
+<ul class = "build incremental">
+<li>Must be quantitative data
+
+<ul>
+<li><strong>Not count data</strong>
+<br><br></li>
+</ul></li>
+<li>\(r =\) correlation between variables
+<br><br></li>
+<li>\(r^2 = \) amount of variance in y that is explained by x
+<br><br></li>
+<li>p-value is still used for significance
+
+<ul>
+<li>For Step 1, most likely significant at \(p < 0.05\)</li>
+</ul></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>A wider spread in \(y\) means a lower \(r^2\)</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-13-1.png" alt="plot of chunk unnamed-chunk-13"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>Question #3</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <table><thead>
+<tr>
+<th></th>
+<th>Clot</th>
+<th>No Clot</th>
+<th>Total</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>OCP Use</td>
+<td>500</td>
+<td>400</td>
+<td>900</td>
+</tr>
+<tr>
+<td>No OCP Use</td>
+<td>80</td>
+<td>20</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>580</td>
+<td>420</td>
+<td>1000</td>
+</tr>
+</tbody></table>
+
+  </div>
+  <div class='span6'>
+    <div class="quiz quiz-single well new">
+      <p>A study was conducted on OCPs and blood clots, and the data is shown. Which of the following is the best method to assess the association between OCP use and blood clots?</p>
+
+<ol>
+<li>Two sample T-test</li>
+<li>Analysis of variance</li>
+<li>Pearson correlation</li>
+<li><em>Chi-square test</em></li>
+<li>Spearman correlation</li>
+</ol>
+
+      <button class="quiz-submit btn btn-primary">Submit</button>
+      <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+      <button class="quiz-show-answer btn btn-success">Show Answer</button>
+      <button class="quiz-clear btn btn-danger">Clear</button>
+      
+      <div class="quiz-hint">
+  <p>What kind of data is this?</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>The only test available that utilizes categorical data is the Chi-square test. All of the other tests require at least rank or quantitative data.</p>
+
+</div>
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Question #4</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>To test a new biomarker, investigators plan a cross-sectional study comprised of two groups. In one group, the researchers will include men with confirmed prostate cancer. In the other group, researchers will include men with no evidence of prostate cancer. The investigators will assume their biomarker is normally distributed. What is the best test to investigate whether the biomarker can distinguish the two groups?</p>
+
+<ol>
+<li>Two sample Mann-Whitney U-test</li>
+<li>Pearson correlation</li>
+<li><em>Two sample T-test</em></li>
+<li>Chi-squared test</li>
+<li>Analysis of variance</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>The number of groups and distribution is all that matters</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>The two sample T-test is the appropriate test in this case. The two sample Mann-Whitney U-test could work as well, but is slightly less efficient for normally distributed data than the T-test. The Pearson correlation requires two measured variables on the same sample. A chi-squared test requires categorical (i.e. count) data. An analysis of variance is typically used to measure the difference in means of three or more groups.</p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>Hypothesis testing has four possible outcomes</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/img/truth_table.png" alt=""></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul class = "build incremental">
+<li>Correct - Reject a false \(H_0\)
+
+<ul>
+<li>Probability of success is called &quot;power&quot;</li>
+<li>Power depends on sample size</li>
+<li>bigger sample = bigger power</li>
+</ul></li>
+<li>Correct - Fail to reject a true \(H_0\)
+
+<ul>
+<li>Probability determined by \(\alpha\) as \(1-\alpha\)</li>
+</ul></li>
+<li>Type 1 - Incorrect rejection of a true \(H_0\)
+
+<ul>
+<li>False Positive</li>
+</ul></li>
+<li>Type 2 - Failure to reject a false \(H_0\)
+
+<ul>
+<li>False Negative</li>
+</ul></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Epidemiology</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26">
+<hgroup>
+  <h2>Types of prevention</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul class = "build incremental">
+<li><strong>P</strong>rimary - <strong>P</strong>revention
+
+<ul>
+<li>An action taken to prevent development of disease in a person who is well
+<br></li>
+</ul></li>
+<li><strong>S</strong>econdary - <strong>S</strong>creening
+
+<ul>
+<li>Identifying people in whom disease has begun but who do not have signs or symptoms
+<br></li>
+</ul></li>
+<li><strong>T</strong>ertiary - <strong>T</strong>reatment
+
+<ul>
+<li>Preventing complications in those who have developed signs and symptoms and have been diagnosed
+<br></li>
+</ul></li>
+<li><strong>Q</strong>uaternary - <strong>Q</strong>uit overtesting and overtreating
+
+<ul>
+<li>Recent effort to minimize excessive healthcare interventions in disease process</li>
+</ul></li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-27">
+<hgroup>
+  <h2>Endemic vs Sporadic vs Epidemic vs Pandemic</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/epidemic.jpg" alt=""></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-28">
+<hgroup>
+  <h2>Statistic differences lie in setting and time frame</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul class = "build incremental">
+<li><p>Attack rate</p>
+
+<ul>
+<li>Typically used <strong>during epidemics or pandemics</strong></li>
+<li>Number of people who get disease / Number of people at risk</li>
+</ul></li>
+<li><p>Incidence</p>
+
+<ul>
+<li>Given a <strong>defined period of time</strong></li>
+<li>Number of people who get disease / Number of people at risk</li>
+</ul></li>
+<li><p>Prevalence</p>
+
+<ul>
+<li><strong>No time course</strong> (i.e. measured at a single point in time)</li>
+<li>Number of people with disease / Number of people at risk</li>
+<li>Simple diseases (e.g. SIR infections): Prevalence = Incidence x Average Disease Duration</li>
+</ul></li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-29">
+<hgroup>
+  <h2>Tests are usually cutoffs on a continuous variable</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/fig/unnamed-chunk-14-1.png" alt="plot of chunk unnamed-chunk-14"></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-30">
+<hgroup>
+  <h2>Sensitivity is true positives / number with disease</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/fig/unnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15"></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-31">
+<hgroup>
+  <h2>Specificity is true negatives / number w/o disease</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/fig/unnamed-chunk-16-1.png" alt="plot of chunk unnamed-chunk-16"></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>PPV and NPV vary based on pre-test probability</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-17-1.png" alt="plot of chunk unnamed-chunk-17"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul class = "build incremental">
+<li>Positive Predictive Value
+
+<ul>
+<li>Chance that person has the disease after a positive test result</li>
+<li>\(PPV = TP / (TP + FP)\)
+<br><br></li>
+</ul></li>
+<li>Negative Predictive Value
+
+<ul>
+<li>Chance that person does not have disease after a negative test result</li>
+<li>\(NPV = TN / (TN + FN)\)
+<br><br></li>
+</ul></li>
+<li><strong>Both depend on how prevalent the disease is in the population</strong></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-33">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<div class="centered"><font size="7">PPV depends on sensitivity or specificity?</font size></div>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-34" style="background:;">
+  <hgroup>
+    <h2>PPV ~ Specificity and NPV ~ Sensitivity</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-18-1.png" alt="plot of chunk unnamed-chunk-18"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-19-1.png" alt="plot of chunk unnamed-chunk-19"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>Interactive app to test predictive value</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src=http://meyerapps.org/predictive_value_shiny/></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-36">
+<hgroup>
+  <h2>This is what real diseases look like in the population</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/fig/unnamed-chunk-20-1.png" alt="plot of chunk unnamed-chunk-20"></p>
+
+<p>This is the real prevalence of HIV... Where would you put the cutoff?</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-37" style="background:;">
+  <hgroup>
+    <h2>Question #5</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class='row-fluid'>
+  <div class='span6'>
+    <p><img src="assets/fig/unnamed-chunk-21-1.png" alt="plot of chunk unnamed-chunk-21"></p>
+
+  </div>
+  <div class='span6'>
+    <div class="quiz quiz-single well new">
+      <p>Assume a steady-state population that is not changing in anyway. Which of the following statements is true for people who test positive regarding moving the cutoff for a positive test from the solid to the dotted line?</p>
+
+<ol>
+<li>Decrease in test specificity</li>
+<li>Increase in test sensitivity</li>
+<li><em>Increase in PPV</em></li>
+<li>Increase in NPV</li>
+<li>Decrease in NPV</li>
+</ol>
+
+      <button class="quiz-submit btn btn-primary">Submit</button>
+      <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+      <button class="quiz-show-answer btn btn-success">Show Answer</button>
+      <button class="quiz-clear btn btn-danger">Clear</button>
+      
+      <div class="quiz-hint">
+  <p>Question prefaces a positive test result</p>
+
+</div>
+<div class="quiz-explanation">
+  <ol>
+<li>Incorrect - Moving the line to the right increases the specificity because it captures more true negatives as a portion of total negative individuals</li>
+<li>Incorrect - Moving the line to the right decreases the sensitivity because it captures fewer true positives as a portion of total positive individuals</li>
+<li>Correct - Moving the line to the right increase positive predictive value drives up the portion of true positives to total positive test by reducing the number of false positives</li>
+<li>Incorrect - The question is concerned about positives tests which do not factor into negative predictive value</li>
+<li>Incorrect - The question is concerned about positives tests which do not factor into negative predictive value</li>
+</ol>
+
+</div>
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-38" style="background:;">
+  <hgroup>
+    <h2>Odds and risk connect disease with exposure</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul class = "build incremental">
+<li>Odds 
+
+<ul>
+<li>Risk that someone with an exposure will get disease</li>
+</ul></li>
+<li>Odds ratio (OR)
+
+<ul>
+<li>Excess odds of exposure of one population relative to another</li>
+</ul></li>
+<li>Risk - <strong>Must know disease prevalence</strong>
+
+<ul>
+<li><strong>Probability</strong> that someone with an exposure will get a disease</li>
+</ul></li>
+<li>Risk Ratio (Relative Risk or RR)
+
+<ul>
+<li>Excess risk of one population relative to another</li>
+</ul></li>
+<li>Both significant if CI does not include 1</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/img/contingency_table.png" alt=""></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-39" style="background:;">
+  <hgroup>
+    <h2>Question #6</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>Investigators are studying the association between mesothelioma and asbestos exposure. Due to the relative rarity of the disease, they design a very large case-control study. In the end, they find an \(OR = 20 (19.54;20.52, p < 0.001)\). After assuming that the OR is a good approximation of risk, the authors conclude that the risk of mesothelioma is 20 times higher in those exposed to asbestos compared to control. Why is their assumption reasonable?</p>
+
+<ol>
+<li><em>The incidence of mesothelioma in the population is low</em></li>
+<li>The sample size of this study is very large</li>
+<li>The result is highly significant</li>
+<li>The OR is always a good approximation of outcome risk</li>
+<li>The 95% CI is very narrow around the OR of 20</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>Think about the denominators for odds and risks.</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>The odds ratio is (A / B) / (C / D) and the risk ratio is (A / (A + B)) / (C / (C + D)). In the case where the number of people with the disease is small, the numbers A and C become very small. In that case, B is a good approximation of A + B and D is a good aproximation of C + D. Thus, the RR ~ (A / B) / (C / D).</p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-40">
+<hgroup>
+  <h2>OR approximates RR in low prevalence diseases</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/contingency_table.png" alt=""></p>
+
+<p><strong>If true infections are low, denominator \(A+B \approx B\) and \(C+D \approx D\)</strong></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-41" style="background:;">
+  <hgroup>
+    <h2>Question #7</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>Two studies were conducted on different samples from the same population to assess the relationship between oral contraceptive use and the risk of deep venous thrombosis (DVT). Study A showed an increased risk of DVT among oral contraceptive users, with a relative risk of 2.0 and a 95% CI of 1.2-2.8. Study B showed a relative risk of 2.05 and a 95% CI of 0.8-3.1. Which of the following statements is most likely to be true regarding these 2 studies?</p>
+
+<ol>
+<li>The p-value in study B is likely to be &lt; 0.05</li>
+<li>The result in study A is not accurate</li>
+<li>The result in study A is not statistically significant</li>
+<li>The result in study B is likely biased</li>
+<li><em>The sample size is likely smaller in study B than study A</em></li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>What gives a narrower confidence interval?</p>
+
+</div>
+<div class="quiz-explanation">
+  <ol>
+<li>Incorrect - The CI in study B overlaps 1 so it is not significant</li>
+<li>Incorrect - It is hard to judge accuracy without knowing the objective Truth</li>
+<li>Inccorect - The CI in study A does not include 1 so it is statistically significant</li>
+<li>Incorrect - There is no reason to believe B is biased</li>
+<li>Correct - Per slide 23/38 bigger sample leads to improved ability to reject a false null hypothesis</li>
+</ol>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-42" style="background:;">
+  <hgroup>
+    <h2>Absolute risk reduction is a risk difference</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul class = "build incremental">
+<li>Reminder
+
+<ul>
+<li>Exposed: \(Risk = A / (A + B)\)</li>
+<li>Unexposed: \(Risk = C / (C + D)\)
+<br><br></li>
+</ul></li>
+<li>\(AR = Risk_{Exposed} - Risk_{Unexposed}\)</li>
+<li>\(ARR = Risk_{Control} - Risk_{Treatment}\)
+<br><br></li>
+<li>Number needed to treat
+
+<ul>
+<li>Number of patients treated for <strong>ONE</strong> patient benefited</li>
+<li>\(NNT = 1 / ARR\)</li>
+<li>\(NNH = 1 / AR\)</li>
+</ul></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-43" style="background:;">
+  <hgroup>
+    <h2>Types of Biases - My groupings</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-44">
+<hgroup>
+  <h2>Biases of design or unseen variables</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul class = "build incremental">
+<li>Selection bias
+
+<ul>
+<li>Non-random partitioning of individuals into groups</li>
+</ul></li>
+<li>Observer-expectancy
+
+<ul>
+<li>Observer is unblinded and expects a particular outcome</li>
+</ul></li>
+<li>Hawthorne effect
+
+<ul>
+<li>Subjects improve health behaviors because someone is watching</li>
+</ul></li>
+<li>Effect modification bias
+
+<ul>
+<li>Magnitude of effect varies by third variable</li>
+<li><strong>Can</strong> be eliminated by stratification</li>
+</ul></li>
+<li>Confounding
+
+<ul>
+<li>Unseen third variable is an underlying cause for correlation of two other variables</li>
+<li><strong>Cannot</strong> be eliminated by stratification</li>
+</ul></li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-45">
+<hgroup>
+  <h2>Biases of information (measurement)</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul class = "build incremental">
+<li>Recall bias
+
+<ul>
+<li>Subjects with disease can recall exposures better than healthy subjects</li>
+</ul></li>
+<li>Procedure bias
+
+<ul>
+<li>Experimenters vary systematically in the way they do work</li>
+<li>e.g. Experimenters don&#39;t follow the specified procedure</li>
+</ul></li>
+<li>Instrument bias
+
+<ul>
+<li>Instrument is broken</li>
+<li>Instruments can also be things like surveys or <strong>clerkship evaluations</strong></li>
+<li>Just means instrument is not reliable</li>
+</ul></li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-46">
+<hgroup>
+  <h2>Biases of time and completion</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul class = "build incremental">
+<li>Lead-time bias
+
+<ul>
+<li>New test detects disease earlier</li>
+<li>Survival appears improved with new test</li>
+</ul></li>
+<li>Attrition bias
+
+<ul>
+<li>Subjects systematically withdraw</li>
+<li>Could be things like side effects or lack of improvement</li>
+</ul></li>
+<li>Loss-to-follow up
+
+<ul>
+<li>Subjects randomly do not report for scheduled followup</li>
+</ul></li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="segue" id="slide-47" style="background:;">
+  <hgroup>
+    <h2>Types of studies</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-48">
+<hgroup>
+  <h2>The pyramid of evidence is a hierarchy</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/evidence_pyramid.jpg" alt=""></p>
+
+<p><strong>Closer to the top means better evidence</strong></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-49">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<div class="centered"><font size="7">Experimental Trials</font size></div>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-50">
+<hgroup>
+  <h2>Randomized control trial is in the name</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/randomized_control.png" alt=""></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-51">
+<hgroup>
+  <h2>Randomized control trials are the gold standard</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul class = "build incremental">
+<li>This is widely considered the gold standard for clinical evidence
+<br><br></li>
+<li>Question: <strong>Primary</strong> purpose of randomization?</li>
+<li>Answer: To eliminate <strong>selection bias</strong>
+
+<ul>
+<li>Selection bias is eliminated if randomization is technically correct
+<br><br></li>
+</ul></li>
+<li>Question: Secondary goal of randomization?</li>
+<li>Answer: To control confounders
+
+<ul>
+<li>Confounders are not necessarily eliminated even with perfect technical execution
+<br><br></li>
+</ul></li>
+<li>Can use relative risk because investigator knows prevalence of disease and prior exposures</li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-52">
+<hgroup>
+  <h2>Crossover trial means the two groups switch</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/crossover.png" alt="">
+<br><br></p>
+
+<ul>
+<li>This post hoc analysis is overly simplified for real life</li>
+<li>This understanding is sufficient for step 1</li>
+<li>Confounders reduced because a patient can serve as their own control</li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-53">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<div class="centered"><font size="7">Observational Studies</font size></div>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-54">
+<hgroup>
+  <h2>Prospective cohorts follow groups into the future</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/prospective_cohort.png" alt=""></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-55">
+<hgroup>
+  <h2>Retrospective cohorts follow groups from the past</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/retrospective_cohort.png" alt=""></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-56">
+<hgroup>
+  <h2>Cohorts form the next level of evidence</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul class = "build incremental">
+<li>Can use relative risk because investigator knows prevalence of exposure and disease</li>
+<li>Subjects vary by exposure status</li>
+<li>Can calculate incidence
+<br><br></li>
+<li><strong>Selection bias</strong> is the biggest problem
+
+<ul>
+<li>Investigator has infinite control over inclusion</li>
+</ul></li>
+<li>Other biases
+
+<ul>
+<li>Attrition, loss-to-follow up, confounding, Hawthorne
+<br><br></li>
+</ul></li>
+<li>Retrospective
+
+<ul>
+<li>Information bias</li>
+</ul></li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-57">
+<hgroup>
+  <h2>Case-control trials measure chance of exposure given disease</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/case_control.png" alt=""></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-58">
+<hgroup>
+  <h2>Case-control forms the next level down from cohorts</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul class = "build incremental">
+<li>Must use odds ratio because investigator does not know prevalence of disease</li>
+<li>Subjects grouped by cases and controls
+
+<ul>
+<li>Measure <strong>odds of exposure</strong> in case and control groups</li>
+</ul></li>
+<li>Significantly improved power and decreased resource requirements compared to cohorts 
+
+<ul>
+<li>Due to cases being selected at out set</li>
+</ul></li>
+<li><strong>Selection and Recall biases</strong> are the biggest problem
+
+<ul>
+<li>Selecting appropriate controls is <strong>highly</strong> non-trivial</li>
+<li>Sick people remember exposures (e.g. Melanoma patients stew about their sunburns)</li>
+</ul></li>
+<li>Also common
+
+<ul>
+<li>Information biases</li>
+</ul></li>
+<li><strong>Cannot calculate incidence or prevalence</strong></li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-59">
+<hgroup>
+  <h2>Cross-sectional trials measure exposure and disease simultaneously</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/cross_sectional.png" alt=""></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-60">
+<hgroup>
+  <h2>Cross-sectional study form next level evidence</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<ul class = "build incremental">
+<li><strong>Quick, cheap, and easy</strong>
+
+<ul>
+<li>Typically this is a starting point</li>
+</ul></li>
+<li>Can establish prevalence of disease</li>
+<li>Must use chi-squared or correlation for statistical test</li>
+<li>Subjects can be grouped by exposure and diease in to the 2x2 contingency
+<br><br></li>
+<li><strong>Cannot establish causation</strong></li>
+<li>Cannot calculate risk metrics</li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-61" style="background:;">
+  <hgroup>
+    <h2>Question #8</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>A study was conducted to evaluate the efficacy of a new antiviral drug for the treatment of the common cold in young children. The study population consisted of 100 children between the age of 2 to 8 years. These children were diagnosed with rhinovirus infection and subsequently given the particular antiviral drug. One week later, it was observed that 92 of the 100 patient were asymptomatic. Which of the following is the true conclusion of this study?</p>
+
+<ol>
+<li>The drug is highly effective as the effectiveness is 90%</li>
+<li>The drug is moderately effective as the efficacy is 90%</li>
+<li><em>An exact conclusion cannot be drawn from the study</em></li>
+<li>The drug is not effective as the sample size is very small</li>
+<li>No conclusion can be made, as compliance is generally very low in small children</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>A treatment is tested without a control</p>
+
+</div>
+<div class="quiz-explanation">
+  <ol>
+<li>Incorrect - We can&#39;t compare to a real-world control.</li>
+<li>Incorrect - We can&#39;t compare to an ideal control.</li>
+<li>Correct - Most people with recover from a cold in a week or so.</li>
+<li>Incorrect - The sample size may be adequate. There are no statistical tests to evaluate this statement.</li>
+<li>Incorrect - Compliance would not be an issue in this case.</li>
+</ol>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-62" style="background:;">
+  <hgroup>
+    <h2>Question #9</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>Researchers are studying the relationship between mutations in HMG-CoA reductase and CAD. The study population is selected at random. Tissue samples are obtained for genotyping and stress echos are performed to assess CHD. In the subsequent paper, the authors conclude that there is an association between mutations in HMG-CoA reductase and CHD. Which of the following study designs did the authors utilize?</p>
+
+<ol>
+<li>Retrospective cohort study</li>
+<li><em>Cross-sectional study</em></li>
+<li>Randomized clinical trial</li>
+<li>Prospective cohort study</li>
+<li>Case-control trial</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>What does the timeline look like?</p>
+
+</div>
+<div class="quiz-explanation">
+  <ol>
+<li>Incorrect - A retrospective cohort starts at some point in the past. There is no indication of a past time or chart review in this study.</li>
+<li>Correct - A cross-sectional study is a &quot;snap shot&quot;. It simultaneously determines both risk factors and disease. It can establish an association, but it cannot say much about causation because the timeline is unknown.</li>
+<li>Incorrect - Although patients are randomly selected, a random clinical trial requires a control group and requires some treatment under investigation.</li>
+<li>Incorrect - A prospective cohort starts in the present and follows a group into the future. There is no indication of time or following patients or recording expsoure.</li>
+<li>Incorrect - A case-control trial requires identifying cases with disease and controls without disease, then identifying exposures, and calculating the risk of exposure in given disease. There is no indication of that here.</li>
+</ol>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-63" style="background:;">
+  <hgroup>
+    <h2>Question #10</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>A study was conducted to evaluate the efficacy of a new antiviral drug. The study population consisted of 100 rhinovirus-infected children. The treatment arm was given an antiviral drug and the control arm was given a placebo. One week later, researchers found that 42 out of 50 treatment patients were asymptomatic and 30 of 50 control patients were asymptomatic. On average, how many people need to be treated with this drug to cure <strong>one</strong> infected person?</p>
+
+<ol>
+<li>25/12</li>
+<li><em>50/12</em></li>
+<li>50/15</li>
+<li>24/7</li>
+<li>50/8</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>\(ARR = Risk_{Control} - Risk_{Treatment}\)
+\(NNT = 1 / ARR\)</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>\(ARR = 42/50 - 30/50 = 12/50\)
+<br>
+\(NNT = 1 / (12/50) = 50/12\)</p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-64">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<div class="centered"><font size="7">The End</font size></div>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-65" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-66" style="background:grey;">
+  <hgroup>
+    <h1>Interactivity</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-67" style="background:;">
+  <hgroup>
+    <h2>Interactive Console</h2>
+  </hgroup>
+  <article data-timings="">
+    <div align="center">
+
+<!-- MotionChart generated in R 3.3.2 by googleVis 0.6.1 package -->
+<!-- Tue Dec 20 14:08:23 2016 -->
+
+
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataMotionChartID2bf5912f31b () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+"Apples",
+2008,
+"West",
+98,
+78,
+20,
+"2008-12-31"
+],
+[
+"Apples",
+2009,
+"West",
+111,
+79,
+32,
+"2009-12-31"
+],
+[
+"Apples",
+2010,
+"West",
+89,
+76,
+13,
+"2010-12-31"
+],
+[
+"Oranges",
+2008,
+"East",
+96,
+81,
+15,
+"2008-12-31"
+],
+[
+"Bananas",
+2008,
+"East",
+85,
+76,
+9,
+"2008-12-31"
+],
+[
+"Oranges",
+2009,
+"East",
+93,
+80,
+13,
+"2009-12-31"
+],
+[
+"Bananas",
+2009,
+"East",
+94,
+78,
+16,
+"2009-12-31"
+],
+[
+"Oranges",
+2010,
+"East",
+98,
+91,
+7,
+"2010-12-31"
+],
+[
+"Bananas",
+2010,
+"East",
+81,
+71,
+10,
+"2010-12-31"
+] 
+];
+data.addColumn('string','Fruit');
+data.addColumn('number','Year');
+data.addColumn('string','Location');
+data.addColumn('number','Sales');
+data.addColumn('number','Expenses');
+data.addColumn('number','Profit');
+data.addColumn('string','Date');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartMotionChartID2bf5912f31b() {
+var data = gvisDataMotionChartID2bf5912f31b();
+var options = {};
+options["width"] = 600;
+options["height"] = 500;
+options["state"] = "";
+
+    var chart = new google.visualization.MotionChart(
+    document.getElementById('MotionChartID2bf5912f31b')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "motionchart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartMotionChartID2bf5912f31b);
+})();
+function displayChartMotionChartID2bf5912f31b() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+<!-- jsChart -->  
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMotionChartID2bf5912f31b"></script>
+ 
+<!-- divChart -->
+  
+<div id="MotionChartID2bf5912f31b" 
+  style="width: 600; height: 500;">
+</div>
+
+<p></div></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-68" style="background:grey;">
+  <hgroup>
+    <h2>HTML widgets</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-69" style="background:;">
+  <hgroup>
+    <h2>HTML widget library</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>HTML widgets are interactive graphics made for the web. These are the main libraries available:</p>
+
+<ul>
+<li><a href="https://rstudio.github.io/leaflet/">leaflet</a>: interactive maps</li>
+<li><a href="https://rstudio.github.io/dygraphs/">dygraphs</a>: charting time series data</li>
+<li><a href="http://www.htmlwidgets.org/showcase_metricsgraphics.html">metricsgraphics</a>: scatterplots, linegraphs and histograms</li>
+<li><a href="http://christophergandrud.github.io/networkD3/">networkD3</a>: network graphs</li>
+<li><a href="https://rstudio.github.io/DT/">DT</a>: print dataframes as html</li>
+<li><a href="http://www.htmlwidgets.org/showcase_threejs.html">threejs</a>: 3d scatterplots and <a href="https://www.chromeexperiments.com/globe">globes</a></li>
+<li><a href="http://rich-iannone.github.io/DiagrammeR/">DiagrammeR</a>: pretty diagrams</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-70" style="background:;">
+  <hgroup>
+    <h2>leaflet</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/leaflet1.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-71" style="background:;">
+  <hgroup>
+    <h2>dygraphs</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/dygraphs1.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-72" style="background:;">
+  <hgroup>
+    <h2>dygraphs (cont)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/dygraphs2.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-73" style="background:;">
+  <hgroup>
+    <h2>dygraphs (cont)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/dygraphs3.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-74" style="background:;">
+  <hgroup>
+    <h2>dygraphs (cont)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/dygraphs4.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-75" style="background:;">
+  <hgroup>
+    <h2>metricsgraphics</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/metricsgraphics1.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-76" style="background:;">
+  <hgroup>
+    <h2>metricsgraphics (cont)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/metricsgraphics2.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-77" style="background:;">
+  <hgroup>
+    <h2>metricsgraphics (cont)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/metricsgraphics3.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-78" style="background:;">
+  <hgroup>
+    <h2>metricsgraphics (cont)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/metricsgraphics4.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-79" style="background:;">
+  <hgroup>
+    <h2>metricsgraphics (cont)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/metricsgraphics5.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-80" style="background:;">
+  <hgroup>
+    <h2>metricsgraphics (cont)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/metricsgraphics6.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-81" style="background:;">
+  <hgroup>
+    <h2>networkD3</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/networkD31.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-82" style="background:;">
+  <hgroup>
+    <h2>networkD3 (cont)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/networkD32.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-83" style="background:;">
+  <hgroup>
+    <h2>DT</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/dt1.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-84" style="background:;">
+  <hgroup>
+    <h2>threejs</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/threejs1.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-85" style="background:;">
+  <hgroup>
+    <h2>threejs (cont)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/threejs2.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-86" style="background:;">
+  <hgroup>
+    <h2>DiagrammeR</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/diagrammer1.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-87" style="background:;">
+  <hgroup>
+    <h2>DiagrammeR (cont)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/diagrammer2.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='NA'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Biostatistics'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='There are some important random terms'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Precision is repeatability, Accuracy is closeness'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Describing Distributions'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Statistical distributions have invariant properties'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Question #1'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Real distributions can have one or multiple peaks'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Skew describes the direction of the tail'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Question #2'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Hypothesis Testing'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='The null hypothesis (\(H_0\)) is always the default'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='T-test compares means of one or two groups'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='NA'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='T-test compares means of one or two groups'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Chi-squared test uses categorical (count) data'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Always expect a contingency table for chi-squared'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='The contingency table can be of any size'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Pearson correlation compares two variables'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='For correlation, r is the critical statistic'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='A wider spread in \(y\) means a lower \(r^2\)'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Question #3'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Question #4'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Hypothesis testing has four possible outcomes'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Epidemiology'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Types of prevention'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Endemic vs Sporadic vs Epidemic vs Pandemic'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Statistic differences lie in setting and time frame'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Tests are usually cutoffs on a continuous variable'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Sensitivity is true positives / number with disease'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Specificity is true negatives / number w/o disease'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='PPV and NPV vary based on pre-test probability'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='NA'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='PPV ~ Specificity and NPV ~ Sensitivity'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Interactive app to test predictive value'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='This is what real diseases look like in the population'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Question #5'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='Odds and risk connect disease with exposure'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='Question #6'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='OR approximates RR in low prevalence diseases'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='Question #7'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='Absolute risk reduction is a risk difference'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='Types of Biases - My groupings'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Biases of design or unseen variables'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Biases of information (measurement)'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Biases of time and completion'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Types of studies'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='The pyramid of evidence is a hierarchy'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='NA'>
+         49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='Randomized control trial is in the name'>
+         50
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='Randomized control trials are the gold standard'>
+         51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='Crossover trial means the two groups switch'>
+         52
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=53 title='NA'>
+         53
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=54 title='Prospective cohorts follow groups into the future'>
+         54
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=55 title='Retrospective cohorts follow groups from the past'>
+         55
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=56 title='Cohorts form the next level of evidence'>
+         56
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=57 title='Case-control trials measure chance of exposure given disease'>
+         57
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=58 title='Case-control forms the next level down from cohorts'>
+         58
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=59 title='Cross-sectional trials measure exposure and disease simultaneously'>
+         59
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=60 title='Cross-sectional study form next level evidence'>
+         60
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=61 title='Question #8'>
+         61
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=62 title='Question #9'>
+         62
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=63 title='Question #10'>
+         63
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=64 title='NA'>
+         64
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=65 title='NA'>
+         65
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=66 title='Interactivity'>
+         66
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=67 title='Interactive Console'>
+         67
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=68 title='HTML widgets'>
+         68
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=69 title='HTML widget library'>
+         69
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=70 title='leaflet'>
+         70
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=71 title='dygraphs'>
+         71
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=72 title='dygraphs (cont)'>
+         72
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=73 title='dygraphs (cont)'>
+         73
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=74 title='dygraphs (cont)'>
+         74
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=75 title='metricsgraphics'>
+         75
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=76 title='metricsgraphics (cont)'>
+         76
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=77 title='metricsgraphics (cont)'>
+         77
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=78 title='metricsgraphics (cont)'>
+         78
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=79 title='metricsgraphics (cont)'>
+         79
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=80 title='metricsgraphics (cont)'>
+         80
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=81 title='networkD3'>
+         81
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=82 title='networkD3 (cont)'>
+         82
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=83 title='DT'>
+         83
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=84 title='threejs'>
+         84
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=85 title='threejs (cont)'>
+         85
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=86 title='DiagrammeR'>
+         86
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=87 title='DiagrammeR (cont)'>
+         87
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/interactive/js/ace/js/ace.js"></script>
+<script src="libraries/widgets/interactive/js/opencpu-0.5.js"></script>
+<script src="libraries/widgets/interactive/js/interactive.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
