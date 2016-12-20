@@ -373,7 +373,6 @@ plot_grid(pos, neg)
 --- &twocol
 ## For correlation, r is the critical statistic
 ***=left
-<br>
 > - Must be quantitative data
  - **Not count data**
 <br><br>

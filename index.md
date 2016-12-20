@@ -254,7 +254,6 @@ The correlation can be positive or negative
 --- &twocol
 ## For correlation, r is the critical statistic
 ***=left
-<br>
 > - Must be quantitative data
  - **Not count data**
 <br><br>
