@@ -1041,7 +1041,7 @@ A study was conducted to evaluate the efficacy of a new antiviral drug. The stud
 <div class="centered"><font size="7">The End</font size></div>
 
 ---
-
+<!---
 
 
 --- .segue bg:grey
@@ -1228,3 +1228,4 @@ cat('<iframe src="./assets/widgets/diagrammer1.html" width=100% height=100% allo
 ```{r, 'diagrammer2', echo=FALSE, warning=FALSE,cache=FALSE,results='asis'}
 cat('<iframe src="./assets/widgets/diagrammer2.html" width=100% height=100% allowtransparency="true"> </iframe>')
 ```
+--->

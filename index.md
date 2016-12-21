@@ -748,7 +748,7 @@ A study was conducted to evaluate the efficacy of a new antiviral drug. The stud
 <div class="centered"><font size="7">The End</font size></div>
 
 ---
-
+<!---
 
 
 --- .segue bg:grey
@@ -1062,3 +1062,4 @@ HTML widgets are interactive graphics made for the web. These are the main libra
 ## DiagrammeR (cont)
 
 <iframe src="./assets/widgets/diagrammer2.html" width=100% height=100% allowtransparency="true"> </iframe>
+--->
