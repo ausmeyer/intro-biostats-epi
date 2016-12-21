@@ -308,7 +308,7 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
 
 ## Interactive tool comparing significance
 
-<iframe src=http://meyerapps.org/predictive_value_shiny/></iframe>
+<iframe src=http://meyerapps.org/statistical_biological_significance/></iframe>
 
 --- &vcenter
 ## Chi-squared test uses categorical (count) data

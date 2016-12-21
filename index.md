@@ -202,7 +202,7 @@ Always remember that the y-axis on these plots are counts or frequency. Therefor
 
 ## Interactive tool comparing significance
 
-<iframe src=http://meyerapps.org/predictive_value_shiny/></iframe>
+<iframe src=http://meyerapps.org/statistical_biological_significance/></iframe>
 
 --- &vcenter
 ## Chi-squared test uses categorical (count) data
