@@ -304,6 +304,12 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
   <br>
   > - Yes, we have accepted \(H_A\). There is a difference between disease and no disease groups.
 
+---
+
+## Interactive tool comparing significance
+
+<iframe src=http://meyerapps.org/predictive_value_shiny/></iframe>
+
 --- &vcenter
 ## Chi-squared test uses categorical (count) data
 

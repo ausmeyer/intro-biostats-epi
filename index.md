@@ -198,6 +198,12 @@ Always remember that the y-axis on these plots are counts or frequency. Therefor
   <br>
   > - Yes, we have accepted \(H_A\). There is a difference between disease and no disease groups.
 
+---
+
+## Interactive tool comparing significance
+
+<iframe src=http://meyerapps.org/predictive_value_shiny/></iframe>
+
 --- &vcenter
 ## Chi-squared test uses categorical (count) data
 
