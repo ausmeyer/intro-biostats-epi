@@ -862,7 +862,7 @@ Thus, mortality is the **risk** of death. Since this is subtraction it is import
 --- &radio2
 ## Question #14
 
-Within the context of this study, approximately how long on average would it take for a female physician to save a patient if we no longer allowed male physicians to treat general medicine patients?
+Within the context of this study, if we no longer allowed men to treat general medicine patients approximately how long on average would it take for a female physician to save a patient that otherwise would have died under the previous treatment system?
 
 1. 2 months
 2. 8 months
