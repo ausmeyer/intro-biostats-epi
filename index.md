@@ -847,6 +847,7 @@ How many patients would need to be treated by a female physician instead of a ma
 
 ***.hint
 Mortality is the **risk** of death.
+
 \(ARR = Risk_{Male} - Risk_{Female}\)
 
 \(NNT = 1 / ARR\)
