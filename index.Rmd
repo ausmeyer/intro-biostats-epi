@@ -1177,7 +1177,7 @@ In this study, between 130 and 180 patients are being seen annually by female an
 \(2381 / 180.5 = 13.2\)
 
 ---
-## Something else
+## Case #2: Value of clinical tests
 
 --- &vcenter
 <div class="centered"><font size="7">The End</font size></div>
