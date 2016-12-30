@@ -1105,11 +1105,11 @@ Mortality is the **risk** of death. Then, the relative risk is:
 
 What is the absolute risk reduction of having a female physician?
 
-1. _0.42_
-2. 1.42
-3. 0.49
-4. 0.64
-5. 3.42
+1. _0.00042_
+2. 0.00142
+3. 0.00049
+4. 0.00064
+5. 0.00342
 
 ***=image
 ![](assets/img/primary_results.png)
