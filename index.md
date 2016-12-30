@@ -792,6 +792,7 @@ Assuming that mortality is simply the incidence of death per 1000 patients, afte
 
 ***.hint
 \(Incidence_{Male} = a / (a + b)\)
+
 \(Incidence_{Female} = c / (c + d)\)
 
 Thus, mortality is the **risk** of death.
@@ -821,10 +822,12 @@ What is the absolute risk reduction of having a female physician?
 
 ***.hint
 Mortality is the **risk** of death.
+
 \(ARR = Risk_{Male} - Risk_{Female}\)
 
 ***.explanation
-Thus, mortality is the **risk** of death. Since this is subtraction it is important to have the units correct.
+Mortality is the **risk** of death. Since this is subtraction it is important to have the units correct.
+
 \(ARR = 0.01149 - 0.01107 = 0.00042\)
 
 --- &radio2
@@ -844,6 +847,7 @@ How many patients would need to be treated by a female physician instead of a ma
 ***.hint
 Mortality is the **risk** of death.
 \(ARR = Risk_{Male} - Risk_{Female}\)
+
 \(NNT = 1 / ARR\)
 
 ***.explanation
