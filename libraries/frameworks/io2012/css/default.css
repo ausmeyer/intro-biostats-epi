@@ -90,11 +90,11 @@ body {
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
-  -webkit-transition: opacity 800ms ease-in 100ms;
-  -moz-transition: opacity 800ms ease-in 100ms;
-  -ms-transition: opacity 800ms ease-in 100ms;
-  -o-transition: opacity 800ms ease-in 100ms;
-  transition: opacity 800ms ease-in 100ms;
+  -webkit-transition: opacity 500ms ease-in 100ms;
+  -moz-transition: opacity 500ms ease-in 100ms;
+  -ms-transition: opacity 500ms ease-in 100ms;
+  -o-transition: opacity 500ms ease-in 100ms;
+  transition: opacity 500ms ease-in 100ms;
 }
 /* line 69, ../scss/_base.scss */
 body.loaded {
@@ -127,11 +127,11 @@ slides {
   perspective: 1000;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transition: opacity 800ms ease-in 100ms;
-  -moz-transition: opacity 800ms ease-in 100ms;
-  -ms-transition: opacity 800ms ease-in 100ms;
-  -o-transition: opacity 800ms ease-in 100ms;
-  transition: opacity 800ms ease-in 100ms;
+  -webkit-transition: opacity 500ms ease-in 100ms;
+  -moz-transition: opacity 500ms ease-in 100ms;
+  -ms-transition: opacity 500ms ease-in 100ms;
+  -o-transition: opacity 500ms ease-in 100ms;
+  transition: opacity 500ms ease-in 100ms;
 }
 
 /* line 94, ../scss/_base.scss */
@@ -251,11 +251,11 @@ slides > slide {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  -webkit-transition: all 0.6s ease-in-out;
-  -moz-transition: all 0.6s ease-in-out;
-  -ms-transition: all 0.6s ease-in-out;
-  -o-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 /* line 119, ../scss/default.scss */
 slides > slide.far-past {
@@ -520,11 +520,11 @@ ul ul {
 /* line 364, ../scss/default.scss */
 .highlight-code slide.current pre > * {
   opacity: 0.25;
-  -webkit-transition: opacity 0.5s ease-in;
-  -moz-transition: opacity 0.5s ease-in;
-  -ms-transition: opacity 0.5s ease-in;
-  -o-transition: opacity 0.5s ease-in;
-  transition: opacity 0.5s ease-in;
+  -webkit-transition: opacity 0.25s ease-in;
+  -moz-transition: opacity 0.25s ease-in;
+  -ms-transition: opacity 0.25s ease-in;
+  -o-transition: opacity 0.25s ease-in;
+  transition: opacity 0.25s ease-in;
 }
 /* line 368, ../scss/default.scss */
 .highlight-code slide.current b {
@@ -843,11 +843,11 @@ article.smaller q:before, article.smaller q:after {
 /* Builds */
 /* line 599, ../scss/default.scss */
 .build > * {
-  -webkit-transition: opacity 0.5s ease-in-out 0.2s;
-  -moz-transition: opacity 0.5s ease-in-out 0.2s;
-  -ms-transition: opacity 0.5s ease-in-out 0.2s;
-  -o-transition: opacity 0.5s ease-in-out 0.2s;
-  transition: opacity 0.5s ease-in-out 0.2s;
+  -webkit-transition: opacity 0.25s ease-in-out 0.1s;
+  -moz-transition: opacity 0.25s ease-in-out 0.1s;
+  -ms-transition: opacity 0.25s ease-in-out 0.1s;
+  -o-transition: opacity 0.25s ease-in-out 0.1s;
+  transition: opacity 0.25s ease-in-out 0.1s;
 }
 /* line 603, ../scss/default.scss */
 .build .to-build {
@@ -962,11 +962,11 @@ article.smaller q:before, article.smaller q:after {
   -ms-transform: translateY(350px);
   -o-transform: translateY(350px);
   transform: translateY(350px);
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 /* line 676, ../scss/default.scss */
 .note > section {
@@ -1064,11 +1064,11 @@ article.smaller q:before, article.smaller q:after {
   -ms-transform: translate3d(250px, 800px, 0) scale(1.5);
   -o-transform: translate3d(250px, 800px, 0) scale(1.5);
   transform: translate3d(250px, 800px, 0) scale(1.5);
-  -webkit-transition: opacity 400ms ease-in-out;
-  -moz-transition: opacity 400ms ease-in-out;
-  -ms-transition: opacity 400ms ease-in-out;
-  -o-transition: opacity 400ms ease-in-out;
-  transition: opacity 400ms ease-in-out;
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 }
 /* line 741, ../scss/default.scss */
 .with-notes.popup .note > section {
@@ -1188,11 +1188,11 @@ article.smaller q:before, article.smaller q:after {
 
 /* line 803, ../scss/default.scss */
 .auto-fadein {
-  -webkit-transition: opacity 0.6s ease-in 1s;
-  -moz-transition: opacity 0.6s ease-in 1s;
-  -ms-transition: opacity 0.6s ease-in 1s;
-  -o-transition: opacity 0.6s ease-in 1s;
-  transition: opacity 0.6s ease-in 1s;
+  -webkit-transition: opacity 0.3s ease-in 0.6s;
+  -moz-transition: opacity 0.3s ease-in 0.6s;
+  -ms-transition: opacity 0.3s ease-in 0.6s;
+  -o-transition: opacity 0.3s ease-in 0.6s;
+  transition: opacity 0.3s ease-in 0.6s;
   opacity: 0;
 }
 
@@ -1293,11 +1293,11 @@ aside.gdbar {
   -moz-background-size: 0% 100%;
   -o-background-size: 0% 100%;
   background-size: 0% 100%;
-  -webkit-transition: all 0.5s ease-out 0.5s;
-  -moz-transition: all 0.5s ease-out 0.5s;
-  -ms-transition: all 0.5s ease-out 0.5s;
-  -o-transition: all 0.5s ease-out 0.5s;
-  transition: all 0.5s ease-out 0.5s;
+  -webkit-transition: all 0.25s ease-out 0.25s;
+  -moz-transition: all 0.25s ease-out 0.25s;
+  -ms-transition: all 0.25s ease-out 0.25s;
+  -o-transition: all 0.25s ease-out 0.25s;
+  transition: all 0.25s ease-out 0.25s;
   /* Better to transition only on background-size, but not sure how to do that with the mixin. */
 }
 /* line 895, ../scss/default.scss */

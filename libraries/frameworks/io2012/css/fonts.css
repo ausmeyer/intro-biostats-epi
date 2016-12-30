@@ -7,7 +7,7 @@
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   src: local('Open Sans Bold'), local('OpenSans-Bold'), url(../fonts/OpenSans-Bold.woff) format('woff');
 }
 @font-face {

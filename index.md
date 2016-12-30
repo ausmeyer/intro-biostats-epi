@@ -16,6 +16,7 @@ assets      : {assets: ../../assets}
 github:
   user: ausmeyer
   repo: intro-biostats-epi
+
 --- &twocol 
 
 <!-- Limit image width and height -->
@@ -754,11 +755,13 @@ A study was conducted to evaluate the efficacy of a new antiviral drug. The stud
 5. 50/8
 
 ***.hint
-\(ARR = Risk_{Control} - Risk_{Treatment}\); \(NNT = 1 / ARR\)
+\(ARR = Risk_{Control} - Risk_{Treatment}\)
+
+\(NNT = 1 / ARR\)
 
 ***.explanation
 \(ARR = 42/50 - 30/50 = 12/50\)
-<br>
+
 \(NNT = 1 / (12/50) = 50/12\)
 
 --- .segue
@@ -774,6 +777,7 @@ A study was conducted to evaluate the efficacy of a new antiviral drug. The stud
 ![](assets/img/demographics.png)
 
 --- &radio2
+## Question #11
 
 Assuming that mortality is simply the incidence of death per 1000 patients, after controlling for physician characteristics, what is the relative risk of death within 30 days of discharge for patients with a male physician versus a female physician?
 
@@ -802,6 +806,7 @@ Mortality is the **risk** of death. Then, the relative risk is:
 \(RR = 11.49 / 11.07\)
 
 --- &radio2
+## Question #12
 
 What is the absolute risk reduction of having a female physician?
 
@@ -823,6 +828,7 @@ Thus, mortality is the **risk** of death. Since this is subtraction it is import
 \(ARR = 0.01149 - 0.01107 = 0.00042\)
 
 --- &radio2
+## Question #13
 
 How many patients would need to be treated by a female physician instead of a male physician to save one life in the 30 days following admission?
 
@@ -848,6 +854,7 @@ Thus, mortality is the **risk** of death. Since this is subtraction it is import
 \(NNT = 1 / ARR = 1 / 0.00042 = 2381\)
 
 --- &radio2
+## Question #14
 
 Within the context of this study, approximately how long would it take a single female physician to save a single patient if we no longer allowed male physicians to treat general medicine patients?
 

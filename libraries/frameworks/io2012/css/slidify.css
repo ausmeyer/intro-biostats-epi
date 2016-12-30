@@ -44,7 +44,7 @@
 /* Fonts and Spacing */
 article p, article li, article li.build, section p, section li{
   font-family: 'Open Sans','Helvetica', 'Crimson Text', 'Garamond',  'Palatino', sans-serif;
-  text-align: left;
+  text-align: justify;
   font-size: 20px;
   line-height: 1.4em;
   color: #444;
@@ -52,7 +52,7 @@ article p, article li, article li.build, section p, section li{
 
 slide:not(.segue) h2{
   font-family: 'Calibri', Arial, sans-serif;
-  font-size: 52px;
+  font-size: 42px;
   font-style: normal;
   font-weight: bold;
   text-transform: normal;
@@ -157,7 +157,7 @@ table th {
 
 table {
   border: none;
-  width: 100%;
+  width: 75%;
   border-collapse: collapse;
   font-size: 24px;
   line-height: 32px;
@@ -321,11 +321,12 @@ body {
 }
 .quiz-option label{
   display: inline;
-  font-size: 1.0em;
+  font-size: 1em;
 }
 slide.segue h2{
- font-family: "Open Sans Condensed";
+ font-family: "Oswald";
  font-weight: 700;
+ color: #535E43 ;
 }
 slide:not(.segue)  h2{
  font-family: "Open Sans Condensed";
@@ -352,7 +353,7 @@ pre code {
 }
 
 .title-slide {
-  background-color: #CBE7A5; /* #EDE0CF; ; #CA9F9D*/
+  background-color: /*#CBE7A5; #EDE0CF;*/ #EEEEEE;
   /* background-image:url(http://goo.gl/EpXln); */
 }
 
