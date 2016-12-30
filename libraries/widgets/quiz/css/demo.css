@@ -1,12 +1,10 @@
-
-/* COMMENT OUT
+/*
 body {
     font-family: Georgia, 'PT Sans', sans-serif;
     font-size: 16px;
     min-height: 800px;
     line-height: 1.5em;
-}
-*/
+}*/
 
 b, strong { font-weight: bold }
 i, em { font-style: italic }
@@ -38,15 +36,15 @@ h1 {
     margin: auto;
 }
 
-/*
-code {
+
+/*code {
     background-color: #F0F0F0;
     font-family: 'DejaVu Sans Mono', consolas, monospace;
     font-size: 14px;
     padding: 2px;
     line-height: 1.25em;
-}
-*/
+}*/
+
 
 .quiz-single, .quiz-multiple, .quiz-text {
   background-color: #F0F0F0;

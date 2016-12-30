@@ -16,7 +16,7 @@ assets      : {assets: ../../assets}
 github:
   user: ausmeyer
   repo: intro-biostats-epi
---- .class #id
+--- &twocol 
 
 <!-- Limit image width and height -->
 <style type="text/css">
@@ -28,22 +28,28 @@ body {background:grey transparent;
 
 ## Roadmap - This is just a guess
 
- - Biostatistics - 20 minutes
+***=left
+  <br>
+  **Basic Statistics**
   - Accuracy versus Precision - 2 minutes
-  - Statistical Inference - 3 minutes
+  - Statistical snference - 3 minutes
   - Distributions - 5 minutes
-  - Hypothesis Testing - 10 minutes
- - Epidemiology - 40 minutes
-  - Types of Prevention and Outbreaks - 4 minutes
-  - Measures of Morbidity and Mortality - 5 minutes
-  - Validity and Reliability of Clinical Tests - 6 minutes
-  - Measures of Risk - 10 minutes
-  - Epidemiological Biases - 5 minutes
-  - Types of Studies - 10 minutes
+  - Hypothesis testing - 10 minutes
 
+***=right
+  <br>
+  **Epidemiology**
+  - Prevention and outbreaks - 4 minutes
+  - Morbidity and mortality - 5 minutes
+  - Validity and reliability - 6 minutes
+  - Measures of risk - 10 minutes
+  - Minimal Bayesian statistics - 10 minutes
+  - Study bias - Mostly for independent
+  - Types of studies - 10 minutes
+  - Cinical applications - 25 minutes
 
 --- .segue
-## Biostatistics
+## Biostatistics Basics
 
 --- &vcenter
 ## There are some important random terms
@@ -839,6 +845,18 @@ ggplot(data=dat, aes(x=Groups, y=Risk)) +
 ```
 
 --- .segue
+## Minimal Bayesian statistics
+
+---
+## There are several fundamental differences
+
+--- 
+## Basic structure involves adding new information to probability
+
+---
+## Real example using real data
+
+--- .segue
 ## Types of Biases - My groupings
 
 --- &vcenter
@@ -1029,13 +1047,124 @@ A study was conducted to evaluate the efficacy of a new antiviral drug. The stud
 5. 50/8
 
 ***.hint
-\(ARR = Risk_{Control} - Risk_{Treatment}\)
-\(NNT = 1 / ARR\)
+\(ARR = Risk_{Control} - Risk_{Treatment}\); \(NNT = 1 / ARR\)
 
 ***.explanation
 \(ARR = 42/50 - 30/50 = 12/50\)
 <br>
 \(NNT = 1 / (12/50) = 50/12\)
+
+--- .segue
+## Two clinical applications
+
+--- &vcenter
+## Case #1: A little controversy
+
+![](assets/img/p1.png)
+
+--- &vcenter
+
+![](assets/img/demographics.png)
+
+--- &radio2
+
+Assuming that mortality is simply the incidence of death per 1000 patients, after controlling for physician characteristics, what is the relative risk of death within 30 days of discharge for patients with a male physician versus a female physician?
+
+1. 11.49
+2. 11.07
+3. _1.04_
+4. 0.96
+5. 1.07
+
+***=image
+![](assets/img/primary_results.png)
+
+***.hint
+\(Incidence_{Male} = a / (a + b)\)
+\(Incidence_{Female} = c / (c + d)\)
+
+Thus, mortality is the **risk** of death.
+
+***.explanation
+Mortality is the **risk** of death. Then, the relative risk is:
+
+\(Risk_{Male} = 11.49\)
+
+\(Risk_{Female} = 11.07\)
+
+\(RR = 11.49 / 11.07\)
+
+--- &radio2
+
+What is the absolute risk reduction of having a female physician?
+
+1. _0.42_
+2. 1.42
+3. 0.49
+4. 0.64
+5. 3.42
+
+***=image
+![](assets/img/primary_results.png)
+
+***.hint
+Mortality is the **risk** of death.
+\(ARR = Risk_{Male} - Risk_{Female}\)
+
+***.explanation
+Thus, mortality is the **risk** of death. Since this is subtraction it is important to have the units correct.
+\(ARR = 0.01149 - 0.01107 = 0.00042\)
+
+--- &radio2
+
+How many patients would need to be treated by a female physician instead of a male physician to save one life in the 30 days following admission?
+
+1. 24
+2. 87
+3. 871
+4. _2381_
+5. 8714
+
+***=image
+![](assets/img/primary_results.png)
+
+***.hint
+Mortality is the **risk** of death.
+\(ARR = Risk_{Male} - Risk_{Female}\)
+\(NNT = 1 / ARR\)
+
+***.explanation
+Thus, mortality is the **risk** of death. Since this is subtraction it is important to have the units correct.
+
+\(ARR = 0.01149 - 0.01107 = 0.00042\)
+
+\(NNT = 1 / ARR = 1 / 0.00042 = 2381\)
+
+--- &radio2
+
+Within the context of this study, approximately how long would it take a single female physician to save a single patient if we no longer allowed male physicians to treat general medicine patients?
+
+1. 2 months
+2. 8 months
+3. 5 years
+4. 10 years
+5. _15 years_
+
+***=image
+![](assets/img/demographics.png)
+
+***.hint
+Approximately how many individual study patients are being seen each year by the physicians in this study?
+
+***.explanation
+In this study, between 130 and 180 patients are being seen annually by female and male physicians respectively. Thus, the time to save a patient in years is:
+
+\(2381 / 131.9 = 18.1\)
+
+\(2381 / 180.5 = 13.2\)
+
+---
+## Something else
 
 --- &vcenter
 <div class="centered"><font size="7">The End</font size></div>
