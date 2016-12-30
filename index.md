@@ -834,7 +834,7 @@ Mortality is the **risk** of death. Since this is subtraction it is important to
 --- &radio2
 ## Question #13
 
-How many patients would need to be treated by a female physician instead of a male physician to save one life in the 30 days following admission?
+Within this study population, on average how many patients would need to be treated by a female physician to save a life?
 
 1. 24
 2. 87
@@ -862,7 +862,7 @@ Thus, mortality is the **risk** of death. Since this is subtraction it is import
 --- &radio2
 ## Question #14
 
-Within the context of this study, approximately how long would it take a single female physician to save a single patient if we no longer allowed male physicians to treat general medicine patients?
+Within the context of this study, approximately how long on average would it take for a female physician to save a patient if we no longer allowed male physicians to treat general medicine patients?
 
 1. 2 months
 2. 8 months
