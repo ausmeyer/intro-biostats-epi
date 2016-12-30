@@ -44,7 +44,7 @@
 /* Fonts and Spacing */
 article p, article li, article li.build, section p, section li{
   font-family: 'Open Sans','Helvetica', 'Crimson Text', 'Garamond',  'Palatino', sans-serif;
-  text-align: justify;
+  text-align: left;
   font-size: 20px;
   line-height: 1.4em;
   color: #444;
