@@ -773,6 +773,7 @@ A study was conducted to evaluate the efficacy of a new antiviral drug. The stud
 ![](assets/img/p1.png)
 
 --- &vcenter
+## Subgroup demographics of the patients and physicians
 
 ![](assets/img/demographics.png)
 
