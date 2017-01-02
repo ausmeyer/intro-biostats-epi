@@ -812,7 +812,7 @@ A study was conducted to evaluate the efficacy of a new antiviral drug. The stud
 --- &radio2
 ## Question #11
 
-Assuming that mortality is simply the incidence of death per 1000 patients, after controlling for physician characteristics, what is the relative risk of death within 30 days of discharge for patients with a male physician versus a female physician?
+Assuming that mortality is simply the incidence of death per 100 patients, after controlling for physician characteristics, what is the relative risk of death within 30 days of discharge for patients with a male physician versus a female physician?
 
 1. 11.49
 2. 11.07
@@ -844,11 +844,11 @@ Mortality is the **risk** of death. Then, the relative risk is:
 
 What is the absolute risk reduction of having a female physician?
 
-1. _0.00042_
-2. 0.00142
-3. 0.00049
-4. 0.00064
-5. 0.00342
+1. _0.0042_
+2. 0.0142
+3. 0.0049
+4. 0.0064
+5. 0.0342
 
 ***=image
 ![](assets/img/primary_results.png)
@@ -861,18 +861,18 @@ Mortality is the **risk** of death.
 ***.explanation
 Mortality is the **risk** of death. Since this is subtraction it is important to have the units correct.
 
-\(ARR = 0.01149 - 0.01107 = 0.00042\)
+\(ARR = 0.1149 - 0.1107 = 0.0042\)
 
 --- &radio2
 ## Question #13
 
 Within this study population, on average how many patients would need to be treated by a female physician to save a life?
 
-1. 24
-2. 87
-3. 871
-4. _2381_
-5. 8714
+1. 2.4
+2. 8.7
+3. 87.1
+4. _238.1_
+5. 871.4
 
 ***=image
 ![](assets/img/primary_results.png)
@@ -887,9 +887,9 @@ Mortality is the **risk** of death.
 ***.explanation
 Thus, mortality is the **risk** of death. Since this is subtraction it is important to have the units correct.
 
-\(ARR = 0.01149 - 0.01107 = 0.00042\)
+\(ARR = 0.1149 - 0.1107 = 0.0042\)
 
-\(NNT = \frac{1}{ARR} = \frac{1}{0.00042} = 2381\)
+\(NNT = \frac{1}{ARR} = \frac{1}{0.0042} = 238.1\)
 
 --- &radio2
 ## Question #14
@@ -898,9 +898,9 @@ Within the context of this study, if we no longer allowed men to treat general m
 
 1. 2 months
 2. 8 months
-3. 5 years
-4. 10 years
-5. _15 years_
+3. _1.5 years_
+4. 3.5 years
+5. 5 years
 
 ***=image
 ![](assets/img/demographics.png)
@@ -911,9 +911,9 @@ Approximately how many individual study patients are being seen each year by the
 ***.explanation
 In this study, between 130 and 180 patients are being seen annually by female and male physicians respectively. Thus, the time to save a patient in years is:
 
-\(\frac{2381}{131.9} = 18.1\)
+\(\frac{238.1}{131.9} = 1.81\)
 
-\(\frac{2381}{180.5} = 13.2\)
+\(\frac{238.1}{180.5} = 1.32\)
 
 ---
 ## What might the distribution of mortality look like?
