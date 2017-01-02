@@ -33,7 +33,7 @@ body {background:grey transparent;
   <br>
   **Basic Statistics**
   - Accuracy versus Precision - 2 minutes
-  - Statistical snference - 3 minutes
+  - Statistical inference - 3 minutes
   - Distributions - 5 minutes
   - Hypothesis testing - 10 minutes
 
@@ -86,6 +86,10 @@ body {background:grey transparent;
 
 ***=right
 ![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png)
+
+```
+## Error in annotate("text", x = -10, y = 950, label = "Mean = Median = Mode", : non-numeric argument to binary operator
+```
 
 ---  &radio
 ## Question #1
@@ -513,8 +517,13 @@ What gives a narrower confidence interval?
 > - \(Specificity = \frac{TrueNegatives}{AllRealNegatives}\)
 > - \(AllRealNegatives = TN + FP\)
 
+--- &vcenter
+## Sensitivity and specificity are continuous in clinical tests
+
+![](assets/img/sensitivities_specificities.png)
+
 --- &twocol
-## PPV and NPV vary based on pre-test probability
+## Unlike Sens and Spec, PPV and NPV vary with pre-test probability
 
 ***=left
 ![plot of chunk unnamed-chunk-18](assets/fig/unnamed-chunk-18-1.png)
@@ -531,7 +540,7 @@ What gives a narrower confidence interval?
 > - __Both depend on how prevalent the disease is in the population__
 
 --- &vcenter
-<div class="centered"><font size="7">PPV depends on sensitivity or specificity?</font size></div>
+<div class="centered"><font size="6">PPV depends more on sensitivity or specificity?</font size></div>
 
 --- &twocol
 ## PPV ~ Specificity and NPV ~ Sensitivity
@@ -579,10 +588,30 @@ Question prefaces a positive test result
 4. Incorrect - The question is concerned about positives tests which do not factor into negative predictive value
 5. Incorrect - The question is concerned about positives tests which do not factor into negative predictive value
 
---- 
+---
 ## ROC curves visually define clinical test value
 
+![](assets/img/rocs_only.png)
 
+<br>
+> - If the curves approximates the __diagonal__, it is a __bad test__
+
+<br>
+> - If the curve goes up the y-axis and then turns right down x-axis, it is a perfect test
+
+--- &vcenter
+## ROC curves also establish the optimal dichotomous cutoff
+
+![](assets/img/rocs_youden.png)
+
+__The best cutoff is the x-value that maximizes the distance from the diagonal to the curve__
+
+--- &vcenter
+## With the optimal cutoff found, it maps to clinical test results
+
+![](assets/img/youden_concentration.png)
+
+__Again, the best cutoff is the x-value that maximizes the distance from the diagonal to the curve__
 
 --- .segue
 ## Minimal Bayesian statistics
@@ -797,10 +826,10 @@ A study was conducted to evaluate the efficacy of a new antiviral drug. The stud
 \(NNT = \frac{1}{12/50} = \frac{50}{12}\)
 
 --- .segue
-## Two clinical applications
+## One clinical application
 
 --- &vcenter
-## Case #1: A little controversy
+## A little controversy
 
 ![](assets/img/p1.png)
 
@@ -919,9 +948,6 @@ In this study, between 130 and 180 patients are being seen annually by female an
 ## What might the distribution of mortality look like?
 
 <iframe src=http://meyerapps.org/male_female_example/></iframe>
-
----
-## Case #2: Value of clinical tests
 
 --- &vcenter
 <div class="centered"><font size="7">The End</font size></div>

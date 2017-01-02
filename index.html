@@ -89,7 +89,7 @@ body {background:grey transparent;
 
 <ul>
 <li>Accuracy versus Precision - 2 minutes</li>
-<li>Statistical snference - 3 minutes</li>
+<li>Statistical inference - 3 minutes</li>
 <li>Distributions - 5 minutes</li>
 <li>Hypothesis testing - 10 minutes</li>
 </ul>
@@ -197,6 +197,9 @@ body {background:grey transparent;
 </div>
 <div style='float:right;width:48%;'>
   <p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></p>
+
+<pre><code>## Error in annotate(&quot;text&quot;, x = -10, y = 950, label = &quot;Mean = Median = Mode&quot;, : non-numeric argument to binary operator
+</code></pre>
 
 </div>
   </article>
@@ -1181,9 +1184,19 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-39" style="background:;">
+<slide class="" id="slide-39">
+<hgroup>
+  <h2>Sensitivity and specificity are continuous in clinical tests</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/sensitivities_specificities.png" alt=""></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-40" style="background:;">
   <hgroup>
-    <h2>PPV and NPV vary based on pre-test probability</h2>
+    <h2>Unlike Sens and Spec, PPV and NPV vary with pre-test probability</h2>
   </hgroup>
   <article data-timings="">
     
@@ -1215,17 +1228,17 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-40">
+<slide class="" id="slide-41">
 <hgroup>
   
 </hgroup>
 <article class = 'flexbox vcenter'>
-<div class="centered"><font size="7">PPV depends on sensitivity or specificity?</font size></div>
+<div class="centered"><font size="6">PPV depends more on sensitivity or specificity?</font size></div>
 
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-41" style="background:;">
+<slide class="" id="slide-42" style="background:;">
   <hgroup>
     <h2>PPV ~ Specificity and NPV ~ Sensitivity</h2>
   </hgroup>
@@ -1243,7 +1256,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-42" style="background:;">
+<slide class="" id="slide-43" style="background:;">
   <hgroup>
     <h2>Interactive app to test predictive value</h2>
   </hgroup>
@@ -1254,7 +1267,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-43">
+<slide class="" id="slide-44">
 <hgroup>
   <h2>This is what real diseases look like in the population</h2>
 </hgroup>
@@ -1266,7 +1279,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-44" style="background:;">
+<slide class="" id="slide-45" style="background:;">
   <hgroup>
     <h2>Question #5</h2>
   </hgroup>
@@ -1315,17 +1328,54 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-45" style="background:;">
+<slide class="" id="slide-46" style="background:;">
   <hgroup>
     <h2>ROC curves visually define clinical test value</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p><img src="assets/img/rocs_only.png" alt=""></p>
+
+<p><br></p>
+
+<ul class = "build incremental">
+<li>If the curves approximates the <strong>diagonal</strong>, it is a <strong>bad test</strong></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
+<li>If the curve goes up the y-axis and then turns right down x-axis, it is a perfect test</li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue" id="slide-46" style="background:;">
+<slide class="" id="slide-47">
+<hgroup>
+  <h2>ROC curves also establish the optimal dichotomous cutoff</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/rocs_youden.png" alt=""></p>
+
+<p><strong>The best cutoff is the x-value that maximizes the distance from the diagonal to the curve</strong></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-48">
+<hgroup>
+  <h2>With the optimal cutoff found, it maps to clinical test results</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="assets/img/youden_concentration.png" alt=""></p>
+
+<p><strong>Again, the best cutoff is the x-value that maximizes the distance from the diagonal to the curve</strong></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="segue" id="slide-49" style="background:;">
   <hgroup>
     <h2>Minimal Bayesian statistics</h2>
   </hgroup>
@@ -1335,7 +1385,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-47" style="background:;">
+<slide class="" id="slide-50" style="background:;">
   <hgroup>
     <h2>There are several fundamental differences</h2>
   </hgroup>
@@ -1345,7 +1395,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-48" style="background:;">
+<slide class="" id="slide-51" style="background:;">
   <hgroup>
     <h2>Basic structure involves adding new information to probability</h2>
   </hgroup>
@@ -1355,7 +1405,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-49" style="background:;">
+<slide class="" id="slide-52" style="background:;">
   <hgroup>
     <h2>Real example using real data</h2>
   </hgroup>
@@ -1365,7 +1415,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue" id="slide-50" style="background:;">
+<slide class="segue" id="slide-53" style="background:;">
   <hgroup>
     <h2>Types of Biases - My groupings</h2>
   </hgroup>
@@ -1375,7 +1425,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-51">
+<slide class="" id="slide-54">
 <hgroup>
   <h2>Biases of design or unseen variables</h2>
 </hgroup>
@@ -1413,7 +1463,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-52">
+<slide class="" id="slide-55">
 <hgroup>
   <h2>Biases of information (measurement)</h2>
 </hgroup>
@@ -1442,7 +1492,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-53">
+<slide class="" id="slide-56">
 <hgroup>
   <h2>Biases of time and completion</h2>
 </hgroup>
@@ -1470,7 +1520,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="segue" id="slide-54" style="background:;">
+<slide class="segue" id="slide-57" style="background:;">
   <hgroup>
     <h2>Types of studies</h2>
   </hgroup>
@@ -1480,7 +1530,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-55">
+<slide class="" id="slide-58">
 <hgroup>
   <h2>The pyramid of evidence is a hierarchy</h2>
 </hgroup>
@@ -1492,7 +1542,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-56">
+<slide class="" id="slide-59">
 <hgroup>
   
 </hgroup>
@@ -1502,7 +1552,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-57">
+<slide class="" id="slide-60">
 <hgroup>
   <h2>Randomized control trial is in the name</h2>
 </hgroup>
@@ -1512,7 +1562,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-58">
+<slide class="" id="slide-61">
 <hgroup>
   <h2>Randomized control trials are the gold standard</h2>
 </hgroup>
@@ -1540,7 +1590,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-59">
+<slide class="" id="slide-62">
 <hgroup>
   <h2>Crossover trial means the two groups switch</h2>
 </hgroup>
@@ -1557,7 +1607,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-60">
+<slide class="" id="slide-63">
 <hgroup>
   
 </hgroup>
@@ -1567,7 +1617,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-61">
+<slide class="" id="slide-64">
 <hgroup>
   <h2>Prospective cohorts follow groups into the future</h2>
 </hgroup>
@@ -1577,7 +1627,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-62">
+<slide class="" id="slide-65">
 <hgroup>
   <h2>Retrospective cohorts follow groups from the past</h2>
 </hgroup>
@@ -1587,7 +1637,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-63">
+<slide class="" id="slide-66">
 <hgroup>
   <h2>Cohorts form the next level of evidence</h2>
 </hgroup>
@@ -1618,7 +1668,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-64">
+<slide class="" id="slide-67">
 <hgroup>
   <h2>Case-control trials measure chance of exposure given disease</h2>
 </hgroup>
@@ -1628,7 +1678,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-65">
+<slide class="" id="slide-68">
 <hgroup>
   <h2>Case-control forms the next level down from cohorts</h2>
 </hgroup>
@@ -1662,7 +1712,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-66">
+<slide class="" id="slide-69">
 <hgroup>
   <h2>Cross-sectional trials measure exposure and disease simultaneously</h2>
 </hgroup>
@@ -1672,7 +1722,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-67">
+<slide class="" id="slide-70">
 <hgroup>
   <h2>Cross-sectional study form next level evidence</h2>
 </hgroup>
@@ -1694,7 +1744,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-68" style="background:;">
+<slide class="" id="slide-71" style="background:;">
   <hgroup>
     <h2>Question #8</h2>
   </hgroup>
@@ -1735,7 +1785,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-69" style="background:;">
+<slide class="" id="slide-72" style="background:;">
   <hgroup>
     <h2>Question #9</h2>
   </hgroup>
@@ -1776,7 +1826,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-70" style="background:;">
+<slide class="" id="slide-73" style="background:;">
   <hgroup>
     <h2>Question #10</h2>
   </hgroup>
@@ -1815,9 +1865,9 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue" id="slide-71" style="background:;">
+<slide class="segue" id="slide-74" style="background:;">
   <hgroup>
-    <h2>Two clinical applications</h2>
+    <h2>One clinical application</h2>
   </hgroup>
   <article data-timings="">
     
@@ -1825,9 +1875,9 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-72">
+<slide class="" id="slide-75">
 <hgroup>
-  <h2>Case #1: A little controversy</h2>
+  <h2>A little controversy</h2>
 </hgroup>
 <article class = 'flexbox vcenter'>
 <p><img src="assets/img/p1.png" alt=""></p>
@@ -1835,7 +1885,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-73">
+<slide class="" id="slide-76">
 <hgroup>
   <h2>Subgroup demographics of the patients and physicians</h2>
 </hgroup>
@@ -1845,7 +1895,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-74" style="background:;">
+<slide class="" id="slide-77" style="background:;">
   <hgroup>
     <h2>Question #11</h2>
   </hgroup>
@@ -1898,7 +1948,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-75" style="background:;">
+<slide class="" id="slide-78" style="background:;">
   <hgroup>
     <h2>Question #12</h2>
   </hgroup>
@@ -1945,7 +1995,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-76" style="background:;">
+<slide class="" id="slide-79" style="background:;">
   <hgroup>
     <h2>Question #13</h2>
   </hgroup>
@@ -1996,7 +2046,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-77" style="background:;">
+<slide class="" id="slide-80" style="background:;">
   <hgroup>
     <h2>Question #14</h2>
   </hgroup>
@@ -2043,7 +2093,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-78" style="background:;">
+<slide class="" id="slide-81" style="background:;">
   <hgroup>
     <h2>What might the distribution of mortality look like?</h2>
   </hgroup>
@@ -2054,17 +2104,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-79" style="background:;">
-  <hgroup>
-    <h2>Case #2: Value of clinical tests</h2>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-80">
+<slide class="" id="slide-82">
 <hgroup>
   
 </hgroup>
@@ -2308,254 +2348,266 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=39 title='PPV and NPV vary based on pre-test probability'>
+        data-slide=39 title='Sensitivity and specificity are continuous in clinical tests'>
          39
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=40 title='NA'>
+        data-slide=40 title='Unlike Sens and Spec, PPV and NPV vary with pre-test probability'>
          40
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=41 title='PPV ~ Specificity and NPV ~ Sensitivity'>
+        data-slide=41 title='NA'>
          41
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=42 title='Interactive app to test predictive value'>
+        data-slide=42 title='PPV ~ Specificity and NPV ~ Sensitivity'>
          42
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=43 title='This is what real diseases look like in the population'>
+        data-slide=43 title='Interactive app to test predictive value'>
          43
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=44 title='Question #5'>
+        data-slide=44 title='This is what real diseases look like in the population'>
          44
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=45 title='ROC curves visually define clinical test value'>
+        data-slide=45 title='Question #5'>
          45
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title='Minimal Bayesian statistics'>
+        data-slide=46 title='ROC curves visually define clinical test value'>
          46
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=47 title='There are several fundamental differences'>
+        data-slide=47 title='ROC curves also establish the optimal dichotomous cutoff'>
          47
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=48 title='Basic structure involves adding new information to probability'>
+        data-slide=48 title='With the optimal cutoff found, it maps to clinical test results'>
          48
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=49 title='Real example using real data'>
+        data-slide=49 title='Minimal Bayesian statistics'>
          49
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=50 title='Types of Biases - My groupings'>
+        data-slide=50 title='There are several fundamental differences'>
          50
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=51 title='Biases of design or unseen variables'>
+        data-slide=51 title='Basic structure involves adding new information to probability'>
          51
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=52 title='Biases of information (measurement)'>
+        data-slide=52 title='Real example using real data'>
          52
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=53 title='Biases of time and completion'>
+        data-slide=53 title='Types of Biases - My groupings'>
          53
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='Types of studies'>
+        data-slide=54 title='Biases of design or unseen variables'>
          54
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=55 title='The pyramid of evidence is a hierarchy'>
+        data-slide=55 title='Biases of information (measurement)'>
          55
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='NA'>
+        data-slide=56 title='Biases of time and completion'>
          56
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=57 title='Randomized control trial is in the name'>
+        data-slide=57 title='Types of studies'>
          57
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=58 title='Randomized control trials are the gold standard'>
+        data-slide=58 title='The pyramid of evidence is a hierarchy'>
          58
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=59 title='Crossover trial means the two groups switch'>
+        data-slide=59 title='NA'>
          59
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=60 title='NA'>
+        data-slide=60 title='Randomized control trial is in the name'>
          60
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=61 title='Prospective cohorts follow groups into the future'>
+        data-slide=61 title='Randomized control trials are the gold standard'>
          61
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=62 title='Retrospective cohorts follow groups from the past'>
+        data-slide=62 title='Crossover trial means the two groups switch'>
          62
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=63 title='Cohorts form the next level of evidence'>
+        data-slide=63 title='NA'>
          63
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=64 title='Case-control trials measure chance of exposure given disease'>
+        data-slide=64 title='Prospective cohorts follow groups into the future'>
          64
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=65 title='Case-control forms the next level down from cohorts'>
+        data-slide=65 title='Retrospective cohorts follow groups from the past'>
          65
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=66 title='Cross-sectional trials measure exposure and disease simultaneously'>
+        data-slide=66 title='Cohorts form the next level of evidence'>
          66
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=67 title='Cross-sectional study form next level evidence'>
+        data-slide=67 title='Case-control trials measure chance of exposure given disease'>
          67
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=68 title='Question #8'>
+        data-slide=68 title='Case-control forms the next level down from cohorts'>
          68
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=69 title='Question #9'>
+        data-slide=69 title='Cross-sectional trials measure exposure and disease simultaneously'>
          69
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=70 title='Question #10'>
+        data-slide=70 title='Cross-sectional study form next level evidence'>
          70
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=71 title='Two clinical applications'>
+        data-slide=71 title='Question #8'>
          71
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=72 title='Case #1: A little controversy'>
+        data-slide=72 title='Question #9'>
          72
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=73 title='Subgroup demographics of the patients and physicians'>
+        data-slide=73 title='Question #10'>
          73
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=74 title='Question #11'>
+        data-slide=74 title='One clinical application'>
          74
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=75 title='Question #12'>
+        data-slide=75 title='A little controversy'>
          75
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=76 title='Question #13'>
+        data-slide=76 title='Subgroup demographics of the patients and physicians'>
          76
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=77 title='Question #14'>
+        data-slide=77 title='Question #11'>
          77
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=78 title='What might the distribution of mortality look like?'>
+        data-slide=78 title='Question #12'>
          78
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=79 title='Case #2: Value of clinical tests'>
+        data-slide=79 title='Question #13'>
          79
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=80 title='NA'>
+        data-slide=80 title='Question #14'>
          80
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=81 title='What might the distribution of mortality look like?'>
+         81
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=82 title='NA'>
+         82
       </a>
     </li>
   </ul>

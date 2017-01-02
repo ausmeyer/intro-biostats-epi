@@ -33,7 +33,7 @@ body {background:grey transparent;
   <br>
   **Basic Statistics**
   - Accuracy versus Precision - 2 minutes
-  - Statistical snference - 3 minutes
+  - Statistical inference - 3 minutes
   - Distributions - 5 minutes
   - Hypothesis testing - 10 minutes
 
@@ -84,7 +84,6 @@ body {background:grey transparent;
 ***=left
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 norm <- rnorm(10000, sd = 1)
 ggplot(data.frame(data = norm), aes(data)) + 
   geom_histogram(binwidth = 0.2) + 
@@ -92,6 +91,7 @@ ggplot(data.frame(data = norm), aes(data)) +
   ylim(0, 950) +
   ggtitle("Normal Distribution") + 
   labs(x="", y="") +
+  theme_bw() +
   annotate("text", x = -10, y = 950, label = "Mean = Median = Mode", size=5, hjust = 0) +
   annotate("text", x = -10, y = 900, label = "68.3% CI ~ Mean +- 1 SD", size=5, hjust = 0) +
   annotate("text", x = -10, y = 850, label = "95.5% CI ~ Mean +- 2 SD", size=5, hjust = 0) +
@@ -101,7 +101,6 @@ ggplot(data.frame(data = norm), aes(data)) +
 ***=right
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 studentt <- rt(10000, df=2)
 ggplot(data.frame(data = studentt), aes(data)) + 
   geom_histogram(binwidth = 0.2)  + 
@@ -109,6 +108,7 @@ ggplot(data.frame(data = studentt), aes(data)) +
   ylim(0, 950) +
   ggtitle("Student t Distribution") + 
   labs(x="", y="") +
+  theme_bw()
   annotate("text", x = -10, y = 950, label = "Mean = Median = Mode", size=5, hjust = 0) +
   annotate("text", x = -10, y = 900, label = "95% CI depends on degrees of freedom", size=5, hjust = 0)
 ```
@@ -142,13 +142,13 @@ The important invariant properties (for you) of normal distributions are the fol
 ***=left
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 norm <- rnorm(10000, mean = 5, sd = 1)
 ggplot(data.frame(data = norm), aes(data)) + 
   geom_histogram(binwidth = 0.1) + 
   xlim(0, 10) + 
   ylim(0, 500) +
   ggtitle("Unimodal Distribution") + 
+  theme_bw() +
   labs(x="", y="")
 ```
 
@@ -156,7 +156,6 @@ ggplot(data.frame(data = norm), aes(data)) +
 ***=right
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 norm1 <- rnorm(5000, mean = 3, sd = 0.8)
 norm2 <- rnorm(5000, mean = 6, sd = 0.8)
 ggplot(data.frame(data = c(norm1, norm2)), aes(data)) + 
@@ -164,6 +163,7 @@ ggplot(data.frame(data = c(norm1, norm2)), aes(data)) +
   xlim(0, 10) + 
   ylim(0, 500) +
   ggtitle("Bimodal Distribution") + 
+  theme_bw() +
   labs(x="", y="")
 ```
 
@@ -173,7 +173,6 @@ ggplot(data.frame(data = c(norm1, norm2)), aes(data)) +
 ***=left
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 Mode <- function(x) {
   ux <- unique(x)
   ux[which.max(tabulate(match(x, ux)))]
@@ -189,6 +188,7 @@ ggplot(data.frame(data = r.skew), aes(data)) +
   ggtitle("Right Skewed") + 
   labs(x="", y="") +
   annotate("text", x = 8, y = 6000, label = "Mean, Median, and Mode are not\nequal in skewed distributions.", size = 6, hjust = 0) +
+  theme_bw() +
   annotate("text", x = 8, y = 4000, label = "Each of the lines represents a\nmeasure of central tendency.\nKnow their orientation in positive\nand negative skewed distributions.", size = 6, hjust = 0)
 ```
 
@@ -196,7 +196,6 @@ ggplot(data.frame(data = r.skew), aes(data)) +
 ***=right
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 Mode <- function(x) {
   ux <- unique(x)
   ux[which.max(tabulate(match(x, ux)))]
@@ -210,6 +209,7 @@ ggplot(data.frame(data = l.skew), aes(data)) +
   xlim(0, 30) + 
   ylim(0, 6500) +
   ggtitle("Left Skewed") + 
+  theme_bw() +
   labs(x="", y="")
 ```
 
@@ -228,7 +228,6 @@ Which of the following corresponds to the measures of central tendency on the gr
 ***=image
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 Mode <- function(x) {
   ux <- unique(x)
   ux[which.max(tabulate(match(x, ux)))]
@@ -242,6 +241,7 @@ ggplot(data.frame(data = r.skew), aes(data)) +
   xlim(0, 30) + 
   ylim(0, 6500) +
   ggtitle("") + 
+  theme_bw() +
   labs(x="", y="")
 ```
 
@@ -274,7 +274,6 @@ Always remember that the y-axis on these plots are counts or frequency. Therefor
 ***=left
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 norm1 <- rnorm(5000, mean = 4.75, sd = 1.2)
 norm2 <- rnorm(5000, mean = 5.25, sd = 1.2)
 ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(norm1)), rep('Disease', length(norm2)))), aes(data, color = Groups)) + 
@@ -282,6 +281,7 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
   xlim(0, 10) + 
   ylim(0, 200) +
   ggtitle("Bimodal Distribution") + 
+  theme_bw() +
   labs(x="", y="")
 ```
 
@@ -370,14 +370,15 @@ The correlation can be positive or negative
 
 ```{r, fig.width = 12, fig.height = 6, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 pos <- ggplot(mtcars, aes(x=wt, y=hp)) + 
   geom_point() + 
   ggtitle("Positive Correlation") + 
+  theme_bw() +
   labs(x="Weight", y="Horse Power")
 neg <- ggplot(mtcars, aes(x=wt, y=mpg)) + 
   geom_point() + 
   ggtitle("Negative Correlation") + 
+  theme_bw() + 
   labs(x="Weight", y="Fuel Efficiency (mpg)")
 
 plot_grid(pos, neg)
@@ -399,14 +400,14 @@ plot_grid(pos, neg)
 ***=right
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 pos <- ggplot(mtcars, aes(x=wt, y=hp)) + 
   geom_point() + 
   geom_smooth(method='lm',formula=y~x) +
   ggtitle("Positive Correlation") + 
   labs(x="Weight", y="Horse Power") +
   xlim(1.5, 5.5) +
-  ylim(00, 310) +
+  ylim(0, 310) +
+  theme_bw() +
   annotate("text", x = 1.6, y = 300, label = paste("r == ", round(cor(mtcars$wt, mtcars$hp), digits = 3), sep = ''), size=5, hjust = 0, parse = TRUE) +
   annotate("text", x = 1.6, y = 280, label = paste("r^2 == ", round(cor(mtcars$wt, mtcars$hp)^2, digits = 3), sep = ''), size=5, hjust = 0, parse = TRUE)
 show(pos)
@@ -418,7 +419,6 @@ show(pos)
 ***=left
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 pos <- ggplot(mtcars, aes(x=wt, y=hp)) + 
   geom_point() + 
   geom_smooth(method='lm',formula=y~x) +
@@ -426,6 +426,7 @@ pos <- ggplot(mtcars, aes(x=wt, y=hp)) +
   labs(x="Weight", y="Horse Power") +
   xlim(1.5, 5.5) +
   ylim(0, 310) +
+  theme_bw() + 
   annotate("text", x = 1.6, y = 300, label = paste("r == ", round(cor(mtcars$wt, mtcars$hp), digits = 3), sep = ''), size=5, hjust = 0, parse = TRUE) +
   annotate("text", x = 1.6, y = 280, label = paste("r^2 == ", round(cor(mtcars$wt, mtcars$hp)^2, digits = 3), sep = ''), size=5, hjust = 0, parse = TRUE)
 show(pos)
@@ -434,7 +435,6 @@ show(pos)
 ***=right
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 fit <- lm(hp~wt, data=mtcars)
 predicted.y <- predict(fit)
 new.y <- mtcars$hp
@@ -448,6 +448,7 @@ pos <- ggplot(newdata, aes(x=wt, y=hp)) +
   labs(x="Weight", y="Horse Power") +
   xlim(1.5, 5.5) +
   ylim(0, 310) +
+  theme_bw() +
   annotate("text", x = 1.6, y = 300, label = paste("r == ", round(cor(newdata$wt, newdata$hp), digits = 3), sep = ''), size=5, hjust = 0, parse = TRUE) +
   annotate("text", x = 1.6, y = 280, label = paste("r^2 == ", round(cor(newdata$wt, newdata$hp)^2, digits = 3), sep = ''), size=5, hjust = 0, parse = TRUE)
 show(pos)
@@ -634,11 +635,12 @@ What gives a narrower confidence interval?
 
 ***=right
 ```{r, fig.height=7, fig.width=6, message=FALSE, warning=FALSE, echo=FALSE}
-
+library(ggplot2)
 dat <- data.frame(Groups = c('Control', 'Treatment'), Risk = c(0.6, 0.34))
 ggplot(data=dat, aes(x=Groups, y=Risk)) +
   geom_bar(colour="black", stat="identity") +
-  ylim(0,1) + 
+  ylim(0,1) +
+  theme_bw() +
   annotate("segment", x = 2, xend = 2, y = 0.34, yend = 0.6, colour = "red", size = 1.5) +
   annotate("text", x = 1.95, y = 0.47, colour = "red", size = 4, label = "Risk Difference", angle = 90)
 ```
@@ -648,7 +650,6 @@ ggplot(data=dat, aes(x=Groups, y=Risk)) +
   
 ```{r, fig.width = 12, fig.height = 7, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 norm1 <- rnorm(5000, mean = 4.25, sd = 1.5)
 norm2 <- rnorm(5000, mean = 7.75, sd = 1.5)
 ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(norm1)), rep('Disease', length(norm2)))), aes(data, fill = Groups)) + 
@@ -656,6 +657,7 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
   geom_vline(xintercept = 6, linetype = 'solid', lwd = 1) +
   scale_fill_manual(values = c("No Disease" = "blue", "Disease" = "red")) +
   labs(x="Cancer Biomarker", y="Fraction of Patients") +
+  theme_bw() +
   annotate("text", x = 1.5, y = 0.02, label = "True\nNegative", size=5, hjust = 0) +
   annotate("text", x = 4.6, y = 0.02, label = "False\nNegative", size=5, hjust = 0) +
   annotate("text", x = 6.35, y = 0.02, label = "False\nPositive", size=5, hjust = 0) +
@@ -667,7 +669,6 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
   
 ```{r, fig.width = 12, fig.height = 7, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 norm1 <- rnorm(5000, mean = 4.25, sd = 1.5)
 norm2 <- rnorm(5000, mean = 7.75, sd = 1.5)
 ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(norm1)), rep('Disease', length(norm2)))), aes(data, fill = Groups)) + 
@@ -675,6 +676,7 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
   geom_vline(xintercept = 6, linetype = 'solid', lwd = 1) +
   scale_fill_manual(values = c("No Disease" = "white", "Disease" = "red")) +
   labs(x="Cancer Biomarker", y="Fraction of Patients") +
+  theme_bw() +
   annotate("text", x = 1.5, y = 0.02, label = "True\nNegative", size=5, hjust = 0, color = '#dddddd') +
   annotate("text", x = 4.6, y = 0.02, label = "False\nNegative", size=5, hjust = 0) +
   annotate("text", x = 6.35, y = 0.02, label = "False\nPositive", size=5, hjust = 0, color = '#dddddd') +
@@ -686,7 +688,6 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
   
 ```{r, fig.width = 12, fig.height = 7, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 norm1 <- rnorm(5000, mean = 4.25, sd = 1.5)
 norm2 <- rnorm(5000, mean = 7.75, sd = 1.5)
 ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(norm1)), rep('Disease', length(norm2)))), aes(data, fill = Groups)) + 
@@ -694,6 +695,7 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
   geom_vline(xintercept = 6, linetype = 'solid', lwd = 1) +
   scale_fill_manual(values = c("No Disease" = "blue", "Disease" = "white")) +
   labs(x="Cancer Biomarker", y="Fraction of Patients") +
+  theme_bw() + 
   annotate("text", x = 1.5, y = 0.02, label = "True\nNegative", size=5, hjust = 0) +
   annotate("text", x = 4.6, y = 0.02, label = "False\nNegative", size=5, hjust = 0, color = '#dddddd') +
   annotate("text", x = 6.35, y = 0.02, label = "False\nPositive", size=5, hjust = 0) +
@@ -727,13 +729,17 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
 > - \(Specificity = \frac{TrueNegatives}{AllRealNegatives}\)
 > - \(AllRealNegatives = TN + FP\)
 
+--- &vcenter
+## Sensitivity and specificity are continuous in clinical tests
+
+![](assets/img/sensitivities_specificities.png)
+
 --- &twocol
-## PPV and NPV vary based on pre-test probability
+## Unlike Sens and Spec, PPV and NPV vary with pre-test probability
 
 ***=left
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 n = 1000
 prevalence <- seq(0, 1, by = 0.001)
 sensitivity <- 0.9
@@ -750,6 +756,7 @@ data <- data.frame(x = prevalence, y = PPV)
 ggplot(data, aes(x = x, y = y)) + 
   geom_line() +
   ylim(0, 1) + 
+  theme_bw() +
   labs(x="Prevalence", y="Positive Predictive Value")
 ```
 
@@ -765,7 +772,7 @@ ggplot(data, aes(x = x, y = y)) +
 > - __Both depend on how prevalent the disease is in the population__
 
 --- &vcenter
-<div class="centered"><font size="7">PPV depends on sensitivity or specificity?</font size></div>
+<div class="centered"><font size="6">PPV depends more on sensitivity or specificity?</font size></div>
 
 --- &twocol
 ## PPV ~ Specificity and NPV ~ Sensitivity
@@ -773,7 +780,6 @@ ggplot(data, aes(x = x, y = y)) +
 ***=left
 ```{r, fig.height = 6.5, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 n = 1000
 prevalence <- seq(0, 1, by = 0.001)
 sensitivity <- 0.5
@@ -788,6 +794,7 @@ data <- data.frame(x = prevalence, y = PPV)
 ggplot(data, aes(x = x, y = y)) + 
   geom_line() +
   ylim(0, 1) + 
+  theme_bw() +
   labs(x="Prevalence", y="Positive Predictive Value") +
   annotate('text', x = 0.5, y = 0.25, label = "50% Sensitive and 90% Specific", size = 5)
 ```
@@ -795,7 +802,6 @@ ggplot(data, aes(x = x, y = y)) +
 ***=right
 ```{r,fig.height = 6.5, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 n = 1000
 prevalence <- seq(0, 1, by = 0.001)
 sensitivity <- 0.9
@@ -810,6 +816,7 @@ data <- data.frame(x = prevalence, y = PPV)
 ggplot(data, aes(x = x, y = y)) + 
   geom_line() +
   ylim(0, 1) + 
+  theme_bw() +
   labs(x="Prevalence", y="Positive Predictive Value") +
   annotate('text', x = 0.5, y = 0.25, label = "90% Sensitive and 50% Specific", size = 5)
 ```
@@ -825,13 +832,13 @@ ggplot(data, aes(x = x, y = y)) +
   
 ```{r, fig.width = 12, fig.height = 7, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 norm1 <- rnorm(318900, mean = 5, sd = 1.5)
 norm2 <- rnorm(1200, mean = 10, sd = 1.5)
 ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(norm1)), rep('Disease', length(norm2)))), aes(x=data, fill=Groups)) + 
   geom_histogram(alpha = 0.2, position="identity", binwidth = 0.1) + 
   geom_vline(xintercept = 9, linetype = 'solid', lwd = 1) +
   scale_fill_manual(values = c("No Disease" = "blue", "Disease" = "red")) +
+  theme_bw() + 
   labs(x="HIV Test", y="Number of Patients")
 ```
 
@@ -851,7 +858,6 @@ Assume a steady-state population that is not changing in anyway. Which of the fo
 ***=image
 ```{r, fig.width = 7, fig.height = 4, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-library(cowplot)
 norm1 <- rnorm(5000, mean = 4.25, sd = 1.5)
 norm2 <- rnorm(5000, mean = 7.75, sd = 1.5)
 ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(norm1)), rep('Disease', length(norm2)))), aes(data, fill = Groups)) + 
@@ -859,6 +865,7 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
   geom_vline(xintercept = 5, linetype = 'solid', lwd = 1) +
   geom_vline(xintercept = 7, linetype = 'dotted', lwd = 1) +
   scale_fill_manual(values = c("No Disease" = "blue", "Disease" = "red")) +
+  theme_bw() +
   labs(x="Cancer Biomarker", y="Fraction of Patients")
 ```
 
@@ -872,10 +879,30 @@ Question prefaces a positive test result
 4. Incorrect - The question is concerned about positives tests which do not factor into negative predictive value
 5. Incorrect - The question is concerned about positives tests which do not factor into negative predictive value
 
---- 
+---
 ## ROC curves visually define clinical test value
 
+![](assets/img/rocs_only.png)
 
+<br>
+> - If the curves approximates the __diagonal__, it is a __bad test__
+
+<br>
+> - If the curve goes up the y-axis and then turns right down x-axis, it is a perfect test
+
+--- &vcenter
+## ROC curves also establish the optimal dichotomous cutoff
+
+![](assets/img/rocs_youden.png)
+
+__The best cutoff is the x-value that maximizes the distance from the diagonal to the curve__
+
+--- &vcenter
+## With the optimal cutoff found, it maps to clinical test results
+
+![](assets/img/youden_concentration.png)
+
+__Again, the best cutoff is the x-value that maximizes the distance from the diagonal to the curve__
 
 --- .segue
 ## Minimal Bayesian statistics
@@ -1090,10 +1117,10 @@ A study was conducted to evaluate the efficacy of a new antiviral drug. The stud
 \(NNT = \frac{1}{12/50} = \frac{50}{12}\)
 
 --- .segue
-## Two clinical applications
+## One clinical application
 
 --- &vcenter
-## Case #1: A little controversy
+## A little controversy
 
 ![](assets/img/p1.png)
 
@@ -1212,9 +1239,6 @@ In this study, between 130 and 180 patients are being seen annually by female an
 ## What might the distribution of mortality look like?
 
 <iframe src=http://meyerapps.org/male_female_example/></iframe>
-
----
-## Case #2: Value of clinical tests
 
 --- &vcenter
 <div class="centered"><font size="7">The End</font size></div>
