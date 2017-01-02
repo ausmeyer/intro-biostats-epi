@@ -41,9 +41,9 @@ body {background:grey transparent;
   <br>
   **Epidemiology**
   - Prevention and outbreaks - 4 minutes
-  - Morbidity and mortality - 5 minutes
-  - Validity and reliability - 6 minutes
+  - Disease metrics - 5 minutes
   - Measures of risk - 10 minutes
+  - Clinical test characteristics - 6 minutes
   - Minimal Bayesian statistics - 10 minutes
   - Study bias - Mostly for independent
   - Types of studies - 10 minutes
@@ -551,6 +551,98 @@ The two sample T-test is the appropriate test in this case. The two sample Mann-
   - Number of people with disease / Number of people at risk
   - Simple diseases (e.g. SIR infections): Prevalence = Incidence x Average Disease Duration
 
+--- &twocol
+
+## Odds and risk connect disease with exposure
+
+***=left
+
+> - Odds 
+  - Risk that someone with an exposure will get disease
+> - Odds ratio (OR)
+  - Excess odds of exposure of one population relative to another
+> - Risk - __Must know disease prevalence__
+  - __Probability__ that someone with an exposure will get a disease
+> - Risk Ratio (Relative Risk or RR)
+  - Excess risk of one population relative to another
+> - Both significant if CI does not include 1
+
+***=right
+
+![](assets/img/contingency_table.png)
+
+--- &radio
+## Question #6
+
+Investigators are studying the association between mesothelioma and asbestos exposure. Due to the relative rarity of the disease, they design a very large case-control study. In the end, they find an \(OR = 20 (19.54;20.52, p < 0.001)\). After assuming that the OR is a good approximation of risk, the authors conclude that the risk of mesothelioma is 20 times higher in those exposed to asbestos compared to control. Why is their assumption reasonable?
+
+1. _The incidence of mesothelioma in the population is low_
+2. The sample size of this study is very large
+3. The result is highly significant
+4. The OR is always a good approximation of outcome risk
+5. The 95% CI is very narrow around the OR of 20
+
+***.hint
+Think about the denominators for odds and risks.
+
+***.explanation
+The odds ratio is (A / B) / (C / D) and the risk ratio is (A / (A + B)) / (C / (C + D)). In the case where the number of people with the disease is small, the numbers A and C become very small. In that case, B is a good approximation of A + B and D is a good aproximation of C + D. Thus, the RR ~ (A / B) / (C / D).
+
+--- &vcenter
+## OR approximates RR in low prevalence diseases
+
+![](assets/img/contingency_table.png)
+
+__If true infections are low, denominator \(A+B \approx B\) and \(C+D \approx D\)__
+
+--- &radio
+## Question #7
+
+Two studies were conducted on different samples from the same population to assess the relationship between oral contraceptive use and the risk of deep venous thrombosis (DVT). Study A showed an increased risk of DVT among oral contraceptive users, with a relative risk of 2.0 and a 95% CI of 1.2-2.8. Study B showed a relative risk of 2.05 and a 95% CI of 0.8-3.1. Which of the following statements is most likely to be true regarding these 2 studies?
+
+1. The p-value in study B is likely to be < 0.05
+2. The result in study A is not accurate
+3. The result in study A is not statistically significant
+4. The result in study B is likely biased
+5. _The sample size is likely smaller in study B than study A_
+
+***.hint
+What gives a narrower confidence interval?
+
+***.explanation
+1. Incorrect - The CI in study B overlaps 1 so it is not significant
+2. Incorrect - It is hard to judge accuracy without knowing the objective Truth
+3. Inccorect - The CI in study A does not include 1 so it is statistically significant
+4. Incorrect - There is no reason to believe B is biased
+5. Correct - Per slide 23/38 bigger sample leads to improved ability to reject a false null hypothesis
+
+--- &twocol
+## Absolute risk reduction is a risk difference
+
+***=left
+> - Reminder
+  - Exposed: \(Risk = \frac{A}{A + B}\)
+  - Unexposed: \(Risk = \frac{C}{C + D}\)
+<br><br>
+> - \(AR = Risk_{Exposed} - Risk_{Unexposed}\)
+> - \(ARR = Risk_{Control} - Risk_{Treatment}\)
+<br><br>
+> - Number needed to treat
+  - Number of patients treated for __ONE__ patient benefited
+  - \(NNT = \frac{1}{ARR}\)
+  - \(NNH = \frac{1}{AR}\)
+
+***=right
+```{r, fig.height=7, fig.width=6, message=FALSE, warning=FALSE, echo=FALSE}
+
+dat <- data.frame(Groups = c('Control', 'Treatment'), Risk = c(0.6, 0.34))
+ggplot(data=dat, aes(x=Groups, y=Risk)) +
+  geom_bar(colour="black", stat="identity") +
+  ylim(0,1) + 
+  annotate("segment", x = 2, xend = 2, y = 0.34, yend = 0.6, colour = "red", size = 1.5) +
+  annotate("text", x = 1.95, y = 0.47, colour = "red", size = 4, label = "Risk Difference", angle = 90)
+```
+
 --- &vcenter
 ## Tests are usually cutoffs on a continuous variable
   
@@ -571,7 +663,7 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
 ```
 
 --- &vcenter
-## Sensitivity is true positives / number with disease
+## Sensitivity: Efficiency of finding **TRUE POSITIVES** in Real Positives
   
 ```{r, fig.width = 12, fig.height = 7, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
@@ -590,7 +682,7 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
 ```
 
 --- &vcenter
-## Specificity is true negatives / number w/o disease
+## Specificity: Efficiency of finding **TRUE NEGATIVES** in Real Negatives
   
 ```{r, fig.width = 12, fig.height = 7, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
@@ -607,6 +699,33 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
   annotate("text", x = 6.35, y = 0.02, label = "False\nPositive", size=5, hjust = 0) +
   annotate("text", x = 9.2, y = 0.02, label = "True\nPositive", size=5, hjust = 0, color = '#dddddd')
 ```
+
+--- &twocol
+## Sensitivity and Specificity are critically important for all of medicine
+> - __These quantities are the defining characteristics of any clinical test__.
+  - They do not depend on anything except the test.
+
+<br>
+
+> - If someone quotes the prositive or negative predictive value of a test, they are wrong.
+
+<br>
+
+> - Therefore, if you do not know the sensitivity or specificity of a test, you are missing information
+  - Without sensitivity and specificity, you cannot make a ROC curve
+  - Never trust a paper, poster, or company presentation that does not include an ROC curve
+  
+***=left
+<br>
+> - __Sensitivity__
+> - \(Sensitivity = \frac{TruePositives}{AllRealPositives}\)
+> - \(AllRealPositives = TP + FN\)
+
+***=right
+<br>
+> - __Specificity__
+> - \(Specificity = \frac{TrueNegatives}{AllRealNegatives}\)
+> - \(AllRealNegatives = TN + FP\)
 
 --- &twocol
 ## PPV and NPV vary based on pre-test probability
@@ -637,11 +756,11 @@ ggplot(data, aes(x = x, y = y)) +
 ***=right
 > - Positive Predictive Value
   - Chance that person has the disease after a positive test result
-  - \(PPV = TP / (TP + FP)\)
+  - \(PPV = \frac{TP}{TP + FP}\)
 <br><br>
 > - Negative Predictive Value
   - Chance that person does not have disease after a negative test result
-  - \(NPV = TN / (TN + FN)\)
+  - \(NPV = \frac{TN}{TN + FN}\)
 <br>  
 > - __Both depend on how prevalent the disease is in the population__
 
@@ -753,97 +872,10 @@ Question prefaces a positive test result
 4. Incorrect - The question is concerned about positives tests which do not factor into negative predictive value
 5. Incorrect - The question is concerned about positives tests which do not factor into negative predictive value
 
---- &twocol
+--- 
+## ROC curves visually define clinical test value
 
-## Odds and risk connect disease with exposure
 
-***=left
-
-> - Odds 
-  - Risk that someone with an exposure will get disease
-> - Odds ratio (OR)
-  - Excess odds of exposure of one population relative to another
-> - Risk - __Must know disease prevalence__
-  - __Probability__ that someone with an exposure will get a disease
-> - Risk Ratio (Relative Risk or RR)
-  - Excess risk of one population relative to another
-> - Both significant if CI does not include 1
-
-***=right
-
-![](assets/img/contingency_table.png)
-
---- &radio
-## Question #6
-
-Investigators are studying the association between mesothelioma and asbestos exposure. Due to the relative rarity of the disease, they design a very large case-control study. In the end, they find an \(OR = 20 (19.54;20.52, p < 0.001)\). After assuming that the OR is a good approximation of risk, the authors conclude that the risk of mesothelioma is 20 times higher in those exposed to asbestos compared to control. Why is their assumption reasonable?
-
-1. _The incidence of mesothelioma in the population is low_
-2. The sample size of this study is very large
-3. The result is highly significant
-4. The OR is always a good approximation of outcome risk
-5. The 95% CI is very narrow around the OR of 20
-
-***.hint
-Think about the denominators for odds and risks.
-
-***.explanation
-The odds ratio is (A / B) / (C / D) and the risk ratio is (A / (A + B)) / (C / (C + D)). In the case where the number of people with the disease is small, the numbers A and C become very small. In that case, B is a good approximation of A + B and D is a good aproximation of C + D. Thus, the RR ~ (A / B) / (C / D).
-
---- &vcenter
-## OR approximates RR in low prevalence diseases
-
-![](assets/img/contingency_table.png)
-
-__If true infections are low, denominator \(A+B \approx B\) and \(C+D \approx D\)__
-
---- &radio
-## Question #7
-
-Two studies were conducted on different samples from the same population to assess the relationship between oral contraceptive use and the risk of deep venous thrombosis (DVT). Study A showed an increased risk of DVT among oral contraceptive users, with a relative risk of 2.0 and a 95% CI of 1.2-2.8. Study B showed a relative risk of 2.05 and a 95% CI of 0.8-3.1. Which of the following statements is most likely to be true regarding these 2 studies?
-
-1. The p-value in study B is likely to be < 0.05
-2. The result in study A is not accurate
-3. The result in study A is not statistically significant
-4. The result in study B is likely biased
-5. _The sample size is likely smaller in study B than study A_
-
-***.hint
-What gives a narrower confidence interval?
-
-***.explanation
-1. Incorrect - The CI in study B overlaps 1 so it is not significant
-2. Incorrect - It is hard to judge accuracy without knowing the objective Truth
-3. Inccorect - The CI in study A does not include 1 so it is statistically significant
-4. Incorrect - There is no reason to believe B is biased
-5. Correct - Per slide 23/38 bigger sample leads to improved ability to reject a false null hypothesis
-
---- &twocol
-## Absolute risk reduction is a risk difference
-
-***=left
-> - Reminder
-  - Exposed: \(Risk = A / (A + B)\)
-  - Unexposed: \(Risk = C / (C + D)\)
-<br><br>
-> - \(AR = Risk_{Exposed} - Risk_{Unexposed}\)
-> - \(ARR = Risk_{Control} - Risk_{Treatment}\)
-<br><br>
-> - Number needed to treat
-  - Number of patients treated for __ONE__ patient benefited
-  - \(NNT = 1 / ARR\)
-  - \(NNH = 1 / AR\)
-
-***=right
-```{r, fig.height=7, fig.width=6, message=FALSE, warning=FALSE, echo=FALSE}
-
-dat <- data.frame(Groups = c('Control', 'Treatment'), Risk = c(0.6, 0.34))
-ggplot(data=dat, aes(x=Groups, y=Risk)) +
-  geom_bar(colour="black", stat="identity") +
-  ylim(0,1) + 
-  annotate("segment", x = 2, xend = 2, y = 0.34, yend = 0.6, colour = "red", size = 1.5) +
-  annotate("text", x = 1.95, y = 0.47, colour = "red", size = 4, label = "Risk Difference", angle = 90)
-```
 
 --- .segue
 ## Minimal Bayesian statistics
@@ -1050,12 +1082,12 @@ A study was conducted to evaluate the efficacy of a new antiviral drug. The stud
 ***.hint
 \(ARR = Risk_{Control} - Risk_{Treatment}\)
 
-\(NNT = 1 / ARR\)
+\(NNT = \frac{1}{ARR}\)
 
 ***.explanation
-\(ARR = 42/50 - 30/50 = 12/50\)
+\(ARR = \frac{42}{50} - \frac{30}{50} = \frac{12}{50}\)
 
-\(NNT = 1 / (12/50) = 50/12\)
+\(NNT = \frac{1}{12/50} = \frac{50}{12}\)
 
 --- .segue
 ## Two clinical applications
@@ -1085,9 +1117,9 @@ Assuming that mortality is simply the incidence of death per 1000 patients, afte
 ![](assets/img/primary_results.png)
 
 ***.hint
-\(Incidence_{Male} = a / (a + b)\)
+\(Incidence_{Male} = \frac{a}{a + b}\)
 
-\(Incidence_{Female} = c / (c + d)\)
+\(Incidence_{Female} = \frac{c}{c + d}\)
 
 Thus, mortality is the **risk** of death.
 
@@ -1098,7 +1130,7 @@ Mortality is the **risk** of death. Then, the relative risk is:
 
 \(Risk_{Female} = 11.07\)
 
-\(RR = 11.49 / 11.07\)
+\(RR = \frac{11.49}{11.07}\)
 
 --- &radio2
 ## Question #12
@@ -1143,14 +1175,14 @@ Mortality is the **risk** of death.
 
 \(ARR = Risk_{Male} - Risk_{Female}\)
 
-\(NNT = 1 / ARR\)
+\(NNT = \frac{1}{ARR}\)
 
 ***.explanation
 Thus, mortality is the **risk** of death. Since this is subtraction it is important to have the units correct.
 
 \(ARR = 0.01149 - 0.01107 = 0.00042\)
 
-\(NNT = 1 / ARR = 1 / 0.00042 = 2381\)
+\(NNT = \frac{1}{ARR} = \frac{1}{0.00042} = 2381\)
 
 --- &radio2
 ## Question #14
@@ -1172,9 +1204,14 @@ Approximately how many individual study patients are being seen each year by the
 ***.explanation
 In this study, between 130 and 180 patients are being seen annually by female and male physicians respectively. Thus, the time to save a patient in years is:
 
-\(2381 / 131.9 = 18.1\)
+\(\frac{2381}{131.9} = 18.1\)
 
-\(2381 / 180.5 = 13.2\)
+\(\frac{2381}{180.5} = 13.2\)
+
+---
+## What might the distribution of mortality look like?
+
+<iframe src=http://meyerapps.org/male_female_example/></iframe>
 
 ---
 ## Case #2: Value of clinical tests

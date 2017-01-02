@@ -41,9 +41,9 @@ body {background:grey transparent;
   <br>
   **Epidemiology**
   - Prevention and outbreaks - 4 minutes
-  - Morbidity and mortality - 5 minutes
-  - Validity and reliability - 6 minutes
+  - Disease metrics - 5 minutes
   - Measures of risk - 10 minutes
+  - Clinical test characteristics - 6 minutes
   - Minimal Bayesian statistics - 10 minutes
   - Study bias - Mostly for independent
   - Types of studies - 10 minutes
@@ -387,87 +387,6 @@ The two sample T-test is the appropriate test in this case. The two sample Mann-
   - Number of people with disease / Number of people at risk
   - Simple diseases (e.g. SIR infections): Prevalence = Incidence x Average Disease Duration
 
---- &vcenter
-## Tests are usually cutoffs on a continuous variable
-  
-![plot of chunk unnamed-chunk-14](assets/fig/unnamed-chunk-14-1.png)
-
---- &vcenter
-## Sensitivity is true positives / number with disease
-  
-![plot of chunk unnamed-chunk-15](assets/fig/unnamed-chunk-15-1.png)
-
---- &vcenter
-## Specificity is true negatives / number w/o disease
-  
-![plot of chunk unnamed-chunk-16](assets/fig/unnamed-chunk-16-1.png)
-
---- &twocol
-## PPV and NPV vary based on pre-test probability
-
-***=left
-![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17-1.png)
-
-***=right
-> - Positive Predictive Value
-  - Chance that person has the disease after a positive test result
-  - \(PPV = TP / (TP + FP)\)
-<br><br>
-> - Negative Predictive Value
-  - Chance that person does not have disease after a negative test result
-  - \(NPV = TN / (TN + FN)\)
-<br>  
-> - __Both depend on how prevalent the disease is in the population__
-
---- &vcenter
-<div class="centered"><font size="7">PPV depends on sensitivity or specificity?</font size></div>
-
---- &twocol
-## PPV ~ Specificity and NPV ~ Sensitivity
-
-***=left
-![plot of chunk unnamed-chunk-18](assets/fig/unnamed-chunk-18-1.png)
-
-***=right
-![plot of chunk unnamed-chunk-19](assets/fig/unnamed-chunk-19-1.png)
-
----
-
-## Interactive app to test predictive value
-
-<iframe src=http://meyerapps.org/predictive_value_shiny/></iframe>
-
---- &vcenter
-## This is what real diseases look like in the population
-  
-![plot of chunk unnamed-chunk-20](assets/fig/unnamed-chunk-20-1.png)
-
- This is the real prevalence of HIV... Where would you put the cutoff?
-
---- &radio2
-## Question #5
-
-Assume a steady-state population that is not changing in anyway. Which of the following statements is true for people who test positive regarding moving the cutoff for a positive test from the solid to the dotted line?
-
-1. Decrease in test specificity
-2. Increase in test sensitivity
-3. _Increase in PPV_
-4. Increase in NPV
-5. Decrease in NPV
-
-***=image
-![plot of chunk unnamed-chunk-21](assets/fig/unnamed-chunk-21-1.png)
-
-***.hint
-Question prefaces a positive test result
-
-***.explanation
-1. Incorrect - Moving the line to the right increases the specificity because it captures more true negatives as a portion of total negative individuals
-2. Incorrect - Moving the line to the right decreases the sensitivity because it captures fewer true positives as a portion of total positive individuals
-3. Correct - Moving the line to the right increase positive predictive value drives up the portion of true positives to total positive test by reducing the number of false positives
-4. Incorrect - The question is concerned about positives tests which do not factor into negative predictive value
-5. Incorrect - The question is concerned about positives tests which do not factor into negative predictive value
-
 --- &twocol
 
 ## Odds and risk connect disease with exposure
@@ -538,19 +457,132 @@ What gives a narrower confidence interval?
 
 ***=left
 > - Reminder
-  - Exposed: \(Risk = A / (A + B)\)
-  - Unexposed: \(Risk = C / (C + D)\)
+  - Exposed: \(Risk = \frac{A}{A + B}\)
+  - Unexposed: \(Risk = \frac{C}{C + D}\)
 <br><br>
 > - \(AR = Risk_{Exposed} - Risk_{Unexposed}\)
 > - \(ARR = Risk_{Control} - Risk_{Treatment}\)
 <br><br>
 > - Number needed to treat
   - Number of patients treated for __ONE__ patient benefited
-  - \(NNT = 1 / ARR\)
-  - \(NNH = 1 / AR\)
+  - \(NNT = \frac{1}{ARR}\)
+  - \(NNH = \frac{1}{AR}\)
 
 ***=right
+![plot of chunk unnamed-chunk-14](assets/fig/unnamed-chunk-14-1.png)
+
+--- &vcenter
+## Tests are usually cutoffs on a continuous variable
+  
+![plot of chunk unnamed-chunk-15](assets/fig/unnamed-chunk-15-1.png)
+
+--- &vcenter
+## Sensitivity: Efficiency of finding **TRUE POSITIVES** in Real Positives
+  
+![plot of chunk unnamed-chunk-16](assets/fig/unnamed-chunk-16-1.png)
+
+--- &vcenter
+## Specificity: Efficiency of finding **TRUE NEGATIVES** in Real Negatives
+  
+![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17-1.png)
+
+--- &twocol
+## Sensitivity and Specificity are critically important for all of medicine
+> - __These quantities are the defining characteristics of any clinical test__.
+  - They do not depend on anything except the test.
+
+<br>
+
+> - If someone quotes the prositive or negative predictive value of a test, they are wrong.
+
+<br>
+
+> - Therefore, if you do not know the sensitivity or specificity of a test, you are missing information
+  - Without sensitivity and specificity, you cannot make a ROC curve
+  - Never trust a paper, poster, or company presentation that does not include an ROC curve
+  
+***=left
+<br>
+> - __Sensitivity__
+> - \(Sensitivity = \frac{TruePositives}{AllRealPositives}\)
+> - \(AllRealPositives = TP + FN\)
+
+***=right
+<br>
+> - __Specificity__
+> - \(Specificity = \frac{TrueNegatives}{AllRealNegatives}\)
+> - \(AllRealNegatives = TN + FP\)
+
+--- &twocol
+## PPV and NPV vary based on pre-test probability
+
+***=left
+![plot of chunk unnamed-chunk-18](assets/fig/unnamed-chunk-18-1.png)
+
+***=right
+> - Positive Predictive Value
+  - Chance that person has the disease after a positive test result
+  - \(PPV = \frac{TP}{TP + FP}\)
+<br><br>
+> - Negative Predictive Value
+  - Chance that person does not have disease after a negative test result
+  - \(NPV = \frac{TN}{TN + FN}\)
+<br>  
+> - __Both depend on how prevalent the disease is in the population__
+
+--- &vcenter
+<div class="centered"><font size="7">PPV depends on sensitivity or specificity?</font size></div>
+
+--- &twocol
+## PPV ~ Specificity and NPV ~ Sensitivity
+
+***=left
+![plot of chunk unnamed-chunk-19](assets/fig/unnamed-chunk-19-1.png)
+
+***=right
+![plot of chunk unnamed-chunk-20](assets/fig/unnamed-chunk-20-1.png)
+
+---
+
+## Interactive app to test predictive value
+
+<iframe src=http://meyerapps.org/predictive_value_shiny/></iframe>
+
+--- &vcenter
+## This is what real diseases look like in the population
+  
+![plot of chunk unnamed-chunk-21](assets/fig/unnamed-chunk-21-1.png)
+
+ This is the real prevalence of HIV... Where would you put the cutoff?
+
+--- &radio2
+## Question #5
+
+Assume a steady-state population that is not changing in anyway. Which of the following statements is true for people who test positive regarding moving the cutoff for a positive test from the solid to the dotted line?
+
+1. Decrease in test specificity
+2. Increase in test sensitivity
+3. _Increase in PPV_
+4. Increase in NPV
+5. Decrease in NPV
+
+***=image
 ![plot of chunk unnamed-chunk-22](assets/fig/unnamed-chunk-22-1.png)
+
+***.hint
+Question prefaces a positive test result
+
+***.explanation
+1. Incorrect - Moving the line to the right increases the specificity because it captures more true negatives as a portion of total negative individuals
+2. Incorrect - Moving the line to the right decreases the sensitivity because it captures fewer true positives as a portion of total positive individuals
+3. Correct - Moving the line to the right increase positive predictive value drives up the portion of true positives to total positive test by reducing the number of false positives
+4. Incorrect - The question is concerned about positives tests which do not factor into negative predictive value
+5. Incorrect - The question is concerned about positives tests which do not factor into negative predictive value
+
+--- 
+## ROC curves visually define clinical test value
+
+
 
 --- .segue
 ## Minimal Bayesian statistics
@@ -757,12 +789,12 @@ A study was conducted to evaluate the efficacy of a new antiviral drug. The stud
 ***.hint
 \(ARR = Risk_{Control} - Risk_{Treatment}\)
 
-\(NNT = 1 / ARR\)
+\(NNT = \frac{1}{ARR}\)
 
 ***.explanation
-\(ARR = 42/50 - 30/50 = 12/50\)
+\(ARR = \frac{42}{50} - \frac{30}{50} = \frac{12}{50}\)
 
-\(NNT = 1 / (12/50) = 50/12\)
+\(NNT = \frac{1}{12/50} = \frac{50}{12}\)
 
 --- .segue
 ## Two clinical applications
@@ -792,9 +824,9 @@ Assuming that mortality is simply the incidence of death per 1000 patients, afte
 ![](assets/img/primary_results.png)
 
 ***.hint
-\(Incidence_{Male} = a / (a + b)\)
+\(Incidence_{Male} = \frac{a}{a + b}\)
 
-\(Incidence_{Female} = c / (c + d)\)
+\(Incidence_{Female} = \frac{c}{c + d}\)
 
 Thus, mortality is the **risk** of death.
 
@@ -805,7 +837,7 @@ Mortality is the **risk** of death. Then, the relative risk is:
 
 \(Risk_{Female} = 11.07\)
 
-\(RR = 11.49 / 11.07\)
+\(RR = \frac{11.49}{11.07}\)
 
 --- &radio2
 ## Question #12
@@ -850,14 +882,14 @@ Mortality is the **risk** of death.
 
 \(ARR = Risk_{Male} - Risk_{Female}\)
 
-\(NNT = 1 / ARR\)
+\(NNT = \frac{1}{ARR}\)
 
 ***.explanation
 Thus, mortality is the **risk** of death. Since this is subtraction it is important to have the units correct.
 
 \(ARR = 0.01149 - 0.01107 = 0.00042\)
 
-\(NNT = 1 / ARR = 1 / 0.00042 = 2381\)
+\(NNT = \frac{1}{ARR} = \frac{1}{0.00042} = 2381\)
 
 --- &radio2
 ## Question #14
@@ -879,9 +911,14 @@ Approximately how many individual study patients are being seen each year by the
 ***.explanation
 In this study, between 130 and 180 patients are being seen annually by female and male physicians respectively. Thus, the time to save a patient in years is:
 
-\(2381 / 131.9 = 18.1\)
+\(\frac{2381}{131.9} = 18.1\)
 
-\(2381 / 180.5 = 13.2\)
+\(\frac{2381}{180.5} = 13.2\)
+
+---
+## What might the distribution of mortality look like?
+
+<iframe src=http://meyerapps.org/statistical_biological_significance/></iframe>
 
 ---
 ## Case #2: Value of clinical tests
