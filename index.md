@@ -918,7 +918,7 @@ In this study, between 130 and 180 patients are being seen annually by female an
 ---
 ## What might the distribution of mortality look like?
 
-<iframe src=http://meyerapps.org/statistical_biological_significance/></iframe>
+<iframe src=http://meyerapps.org/male_female_example/></iframe>
 
 ---
 ## Case #2: Value of clinical tests
