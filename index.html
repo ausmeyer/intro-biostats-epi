@@ -1467,12 +1467,79 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
     <h2>Basic structure involves adding new information to probability</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p><br></p>
+
+<ul class = "build incremental">
+<li>Start with pre-test probability
+
+<ul>
+<li>This data is available all over the place</li>
+<li>Example: Region 6 prevalence of influenza right now is <strong>\(\approx 4\%\)</strong></li>
+</ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
+<li>Do something (e.g. rapid flu test)
+
+<ul>
+<li>Flu test: <strong>\(Sensitivity \approx 70\%\)</strong> and <strong>\(Specificity \approx 95\%\)</strong></li>
+<li>If positive, use likelihood ratio positive (a.k.a. bayes factor positive)</li>
+<li><strong>\(LR+ = \frac{sensitivity}{1 - specificity} = \frac{0.7}{1 - 0.95} = 14\)</strong></li>
+<li>If negative, use likelihood ratio negative (a.k.a. bayes factor negative)</li>
+<li><strong>\(LR- = \frac{1 - sensitivity}{specificity} = \frac{1 - 0.7}{0.95} = 0.32\)</strong></li>
+</ul></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-52" style="background:;">
+  <hgroup>
+    <h2>Adjust probability with the following procedure</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul class = "build incremental">
+<li>Pre-test Probability \(\rightarrow\) Pre-test Odds \(\rightarrow\) Pre-test Odds x LR \(\rightarrow\) Post-test Odds \(\rightarrow\) Post-test Probability</li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
+<li>Probability \(\rightarrow\) Odds: \(O = \frac{P}{1 - P}\)</li>
+<li>Odds \(\rightarrow\) Probability: \(P = \frac{O}{1 + O}\)</li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
+<li>Positive test: \(0.04 \rightarrow 0.04/0.96 = 0.042 \rightarrow 0.042 * 14 = 0.583 \rightarrow 0.583/1.583 = 0.37\)
+
+<ul>
+<li>Post-test probability following <strong>positive</strong> test: <strong>\(35\%\)</strong></li>
+</ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
+<li>Negative test: \(0.04 \rightarrow 0.04/0.96 = 0.042 \rightarrow 0.042 * 0.32 = 0.0134 \rightarrow 0.0134/1.0134 = 0.0132\)
+
+<ul>
+<li>Post-test probability following <strong>negative</strong> test: <strong>\(1.32\%\)</strong></li>
+<li>So this time of year a negative test is basically useless</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-53" style="background:;">
   <hgroup>
     <h2>Example: probability of pneumococcal pneumonia given +CXR</h2>
   </hgroup>
@@ -1483,7 +1550,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue" id="slide-53" style="background:;">
+<slide class="segue" id="slide-54" style="background:;">
   <hgroup>
     <h2>Types of Biases - My groupings</h2>
   </hgroup>
@@ -1493,7 +1560,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-54" style="background:;">
+<slide class="" id="slide-55" style="background:;">
   <hgroup>
     <h2>Biases of design or unseen variables</h2>
   </hgroup>
@@ -1529,7 +1596,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-55" style="background:;">
+<slide class="" id="slide-56" style="background:;">
   <hgroup>
     <h2>Biases of information (measurement)</h2>
   </hgroup>
@@ -1571,7 +1638,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-56" style="background:;">
+<slide class="" id="slide-57" style="background:;">
   <hgroup>
     <h2>Biases of time and completion</h2>
   </hgroup>
@@ -1612,7 +1679,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue" id="slide-57" style="background:;">
+<slide class="segue" id="slide-58" style="background:;">
   <hgroup>
     <h2>Types of studies</h2>
   </hgroup>
@@ -1622,7 +1689,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-58">
+<slide class="" id="slide-59">
 <hgroup>
   <h2>The pyramid of evidence is a hierarchy</h2>
 </hgroup>
@@ -1634,7 +1701,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-59">
+<slide class="" id="slide-60">
 <hgroup>
   
 </hgroup>
@@ -1644,7 +1711,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-60">
+<slide class="" id="slide-61">
 <hgroup>
   <h2>Randomized control trial is in the name</h2>
 </hgroup>
@@ -1654,7 +1721,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-61" style="background:;">
+<slide class="" id="slide-62" style="background:;">
   <hgroup>
     <h2>Randomized control trials are the gold standard</h2>
   </hgroup>
@@ -1697,7 +1764,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-62" style="background:;">
+<slide class="" id="slide-63" style="background:;">
   <hgroup>
     <h2>Crossover trial means the two groups switch</h2>
   </hgroup>
@@ -1716,7 +1783,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-63">
+<slide class="" id="slide-64">
 <hgroup>
   
 </hgroup>
@@ -1726,7 +1793,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-64">
+<slide class="" id="slide-65">
 <hgroup>
   <h2>Prospective cohorts follow groups into the future</h2>
 </hgroup>
@@ -1736,7 +1803,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-65">
+<slide class="" id="slide-66">
 <hgroup>
   <h2>Retrospective cohorts follow groups from the past</h2>
 </hgroup>
@@ -1746,7 +1813,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-66" style="background:;">
+<slide class="" id="slide-67" style="background:;">
   <hgroup>
     <h2>Cohorts form the next level of evidence</h2>
   </hgroup>
@@ -1788,7 +1855,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-67">
+<slide class="" id="slide-68">
 <hgroup>
   <h2>Case-control trials measure chance of exposure given disease</h2>
 </hgroup>
@@ -1798,7 +1865,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-68" style="background:;">
+<slide class="" id="slide-69" style="background:;">
   <hgroup>
     <h2>Case-control forms the next level down from cohorts</h2>
   </hgroup>
@@ -1835,7 +1902,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-69">
+<slide class="" id="slide-70">
 <hgroup>
   <h2>Cross-sectional trials measure exposure and disease simultaneously</h2>
 </hgroup>
@@ -1845,7 +1912,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-70" style="background:;">
+<slide class="" id="slide-71" style="background:;">
   <hgroup>
     <h2>Cross-sectional study form next level evidence</h2>
   </hgroup>
@@ -1874,7 +1941,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-71" style="background:;">
+<slide class="" id="slide-72" style="background:;">
   <hgroup>
     <h2>Question #8</h2>
   </hgroup>
@@ -1915,7 +1982,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-72" style="background:;">
+<slide class="" id="slide-73" style="background:;">
   <hgroup>
     <h2>Question #9</h2>
   </hgroup>
@@ -1956,7 +2023,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-73" style="background:;">
+<slide class="" id="slide-74" style="background:;">
   <hgroup>
     <h2>Question #10</h2>
   </hgroup>
@@ -1995,7 +2062,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue" id="slide-74" style="background:;">
+<slide class="segue" id="slide-75" style="background:;">
   <hgroup>
     <h2>One clinical application</h2>
   </hgroup>
@@ -2005,7 +2072,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-75">
+<slide class="" id="slide-76">
 <hgroup>
   <h2>A little controversy</h2>
 </hgroup>
@@ -2015,7 +2082,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-76">
+<slide class="" id="slide-77">
 <hgroup>
   <h2>Subgroup demographics of the patients and physicians</h2>
 </hgroup>
@@ -2025,7 +2092,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-77" style="background:;">
+<slide class="" id="slide-78" style="background:;">
   <hgroup>
     <h2>Question #11</h2>
   </hgroup>
@@ -2078,7 +2145,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-78" style="background:;">
+<slide class="" id="slide-79" style="background:;">
   <hgroup>
     <h2>Question #12</h2>
   </hgroup>
@@ -2125,7 +2192,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-79" style="background:;">
+<slide class="" id="slide-80" style="background:;">
   <hgroup>
     <h2>Question #13</h2>
   </hgroup>
@@ -2176,7 +2243,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-80" style="background:;">
+<slide class="" id="slide-81" style="background:;">
   <hgroup>
     <h2>Question #14</h2>
   </hgroup>
@@ -2223,7 +2290,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-81" style="background:;">
+<slide class="" id="slide-82" style="background:;">
   <hgroup>
     <h2>What might the distribution of physician mortality look like?</h2>
   </hgroup>
@@ -2234,7 +2301,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-82">
+<slide class="" id="slide-83">
 <hgroup>
   
 </hgroup>
@@ -2556,188 +2623,194 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=52 title='Example: probability of pneumococcal pneumonia given +CXR'>
+        data-slide=52 title='Adjust probability with the following procedure'>
          52
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=53 title='Types of Biases - My groupings'>
+        data-slide=53 title='Example: probability of pneumococcal pneumonia given +CXR'>
          53
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='Biases of design or unseen variables'>
+        data-slide=54 title='Types of Biases - My groupings'>
          54
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=55 title='Biases of information (measurement)'>
+        data-slide=55 title='Biases of design or unseen variables'>
          55
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='Biases of time and completion'>
+        data-slide=56 title='Biases of information (measurement)'>
          56
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=57 title='Types of studies'>
+        data-slide=57 title='Biases of time and completion'>
          57
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=58 title='The pyramid of evidence is a hierarchy'>
+        data-slide=58 title='Types of studies'>
          58
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=59 title='NA'>
+        data-slide=59 title='The pyramid of evidence is a hierarchy'>
          59
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=60 title='Randomized control trial is in the name'>
+        data-slide=60 title='NA'>
          60
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=61 title='Randomized control trials are the gold standard'>
+        data-slide=61 title='Randomized control trial is in the name'>
          61
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=62 title='Crossover trial means the two groups switch'>
+        data-slide=62 title='Randomized control trials are the gold standard'>
          62
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=63 title='NA'>
+        data-slide=63 title='Crossover trial means the two groups switch'>
          63
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=64 title='Prospective cohorts follow groups into the future'>
+        data-slide=64 title='NA'>
          64
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=65 title='Retrospective cohorts follow groups from the past'>
+        data-slide=65 title='Prospective cohorts follow groups into the future'>
          65
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=66 title='Cohorts form the next level of evidence'>
+        data-slide=66 title='Retrospective cohorts follow groups from the past'>
          66
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=67 title='Case-control trials measure chance of exposure given disease'>
+        data-slide=67 title='Cohorts form the next level of evidence'>
          67
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=68 title='Case-control forms the next level down from cohorts'>
+        data-slide=68 title='Case-control trials measure chance of exposure given disease'>
          68
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=69 title='Cross-sectional trials measure exposure and disease simultaneously'>
+        data-slide=69 title='Case-control forms the next level down from cohorts'>
          69
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=70 title='Cross-sectional study form next level evidence'>
+        data-slide=70 title='Cross-sectional trials measure exposure and disease simultaneously'>
          70
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=71 title='Question #8'>
+        data-slide=71 title='Cross-sectional study form next level evidence'>
          71
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=72 title='Question #9'>
+        data-slide=72 title='Question #8'>
          72
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=73 title='Question #10'>
+        data-slide=73 title='Question #9'>
          73
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=74 title='One clinical application'>
+        data-slide=74 title='Question #10'>
          74
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=75 title='A little controversy'>
+        data-slide=75 title='One clinical application'>
          75
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=76 title='Subgroup demographics of the patients and physicians'>
+        data-slide=76 title='A little controversy'>
          76
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=77 title='Question #11'>
+        data-slide=77 title='Subgroup demographics of the patients and physicians'>
          77
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=78 title='Question #12'>
+        data-slide=78 title='Question #11'>
          78
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=79 title='Question #13'>
+        data-slide=79 title='Question #12'>
          79
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=80 title='Question #14'>
+        data-slide=80 title='Question #13'>
          80
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=81 title='What might the distribution of physician mortality look like?'>
+        data-slide=81 title='Question #14'>
          81
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=82 title='NA'>
+        data-slide=82 title='What might the distribution of physician mortality look like?'>
          82
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=83 title='NA'>
+         83
       </a>
     </li>
   </ul>

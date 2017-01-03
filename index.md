@@ -646,6 +646,38 @@ __Again, the best cutoff is the x-value that maximizes the distance from the dia
 --- 
 ## Basic structure involves adding new information to probability
 
+<br>
+> - Start with pre-test probability
+  - This data is available all over the place
+  - Example: Region 6 prevalence of influenza right now is __\(\approx 4\%\)__
+  
+<br>
+> - Do something (e.g. rapid flu test)
+  - Flu test: __\(Sensitivity \approx 70\%\)__ and __\(Specificity \approx 95\%\)__
+  - If positive, use likelihood ratio positive (a.k.a. bayes factor positive)
+    - __\(LR+ = \frac{sensitivity}{1 - specificity} = \frac{0.7}{1 - 0.95} = 14\)__
+  - If negative, use likelihood ratio negative (a.k.a. bayes factor negative)
+    - __\(LR- = \frac{1 - sensitivity}{specificity} = \frac{1 - 0.7}{0.95} = 0.32\)__
+
+---
+## Adjust probability with the following procedure
+
+<br>
+> - Pre-test Probability \(\rightarrow\) Pre-test Odds \(\rightarrow\) Pre-test Odds x LR \(\rightarrow\) Post-test Odds \(\rightarrow\) Post-test Probability
+
+<br>
+> - Probability \(\rightarrow\) Odds: \(O = \frac{P}{1 - P}\)
+> - Odds \(\rightarrow\) Probability: \(P = \frac{O}{1 + O}\)
+
+<br>
+> - Positive test: \(0.04 \rightarrow 0.04/0.96 = 0.042 \rightarrow 0.042 * 14 = 0.583 \rightarrow 0.583/1.583 = 0.37\)
+  - Post-test probability following __positive__ test: __\(35\%\)__
+
+<br>
+> - Negative test: \(0.04 \rightarrow 0.04/0.96 = 0.042 \rightarrow 0.042 * 0.32 = 0.0134 \rightarrow 0.0134/1.0134 = 0.0132\)
+  - Post-test probability following __negative__ test: __\(1.32\%\)__
+  - So this time of year a negative test is basically useless
+
 ---
 ## Example: probability of pneumococcal pneumonia given +CXR
 
