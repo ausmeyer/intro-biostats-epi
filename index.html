@@ -125,46 +125,45 @@ body {background:grey transparent;
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-3">
-<hgroup>
-  <h2>There are some important random terms</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>There are some important random terms</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul class = "build incremental">
-<li>Generalizability
+<li><p>Generalizability</p>
 
 <ul>
-<li>How applicable is a finding to the general population
-<br></li>
+<li>How applicable is a finding to the general population</li>
 </ul></li>
-<li>P-value
+<li><p>P-value</p>
 
 <ul>
-<li>Probability of finding a value this extreme by random chance
-<br></li>
+<li>Probability of finding a value this extreme by random chance</li>
 </ul></li>
-<li>Confidence Interval
+<li><p>Confidence Interval</p>
 
 <ul>
-<li>Interval over which population value is found with a specified probability (e.g. 95%)
-<br></li>
+<li>Interval over which population value is found with a specified probability (e.g. 95%)</li>
 </ul></li>
-<li>Efficacy
+<li><p>Efficacy</p>
 
 <ul>
-<li>Performance of treatment under ideal circumstances
-<br></li>
+<li>Performance of treatment under ideal circumstances</li>
 </ul></li>
-<li>Effectiveness
+<li><p>Effectiveness</p>
 
 <ul>
 <li>Performance of treatment under real world circumstances</li>
 </ul></li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
+
 <slide class="" id="slide-4">
 <hgroup>
   <h2>Precision is repeatability, Accuracy is closeness</h2>
@@ -335,33 +334,44 @@ body {background:grey transparent;
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-12">
-<hgroup>
-  <h2>The null hypothesis (\(H_0\)) is always the default</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>The null hypothesis (\(H_0\)) is always the default</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul class = "build incremental">
 <li>Assume:
 
 <ul>
 <li>There are two or more groups being compared, or </li>
 <li>One group being compared to zero, or</li>
-<li>One group is being compared to expectation.
-<br><br></li>
+<li>One group is being compared to expectation.</li>
 </ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li>For Step 1, probably safe to assume null is always rejected with \(p < 0.05\).
 
 <ul>
 <li>For ratios (e.g. Relative Risk, Odds Ratio), a 95% CI <strong>not</strong> overlapping 1 is significant.</li>
-<li>For two sample tests, it is less straightforward how the CI relates to the p-value
-<br><br></li>
+<li>For two sample tests, it is less straightforward how the CI relates to the p-value</li>
 </ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li>Once \(H_0\) is rejected, we accept the alternative hypothesis \(H_A\).</li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
+
 <slide class="" id="slide-13" style="background:;">
   <hgroup>
     <h2>T-test compares means of one or two groups</h2>
@@ -398,14 +408,15 @@ body {background:grey transparent;
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-15">
-<hgroup>
-  <h2>T-test compares means of one or two groups</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>T-test compares means of one or two groups</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul>
-<li>Two sample: \(H_0\) = There is no difference between the disease and no disease groups
-<br></li>
+<li><p>Two sample: \(H_0\) = There is no difference between the disease and no disease groups</p></li>
 <li><p>Run the t-test</p>
 
 <pre><code class="r">norm1 &lt;- rnorm(5000, mean = 4.75, sd = 1.2)
@@ -416,16 +427,18 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 <pre><code>## [1] 4.687206e-88
 </code></pre>
 
+<p><br></p>
+
 <ul class = "build incremental">
-<li>Have we rejected the null hypothesis?
-<br></li>
-<li>Yes, we have accepted \(H_A\). There is a difference between disease and no disease groups.</li>
+<li><p>Have we rejected the null hypothesis?</p></li>
+<li><p>Yes, we have accepted \(H_A\). There is a difference between disease and no disease groups.</p></li>
 </ul></li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
+
 <slide class="" id="slide-16" style="background:;">
   <hgroup>
     <h2>Interactive tool comparing significance</h2>
@@ -437,11 +450,13 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-17">
-<hgroup>
-  <h2>Chi-squared test uses categorical (count) data</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Chi-squared test uses categorical (count) data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul class = "build incremental">
 <li>Two common tests
 
@@ -463,9 +478,10 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </ul></li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
+
 <slide class="" id="slide-18">
 <hgroup>
   <h2>Always expect a contingency table for chi-squared</h2>
@@ -659,17 +675,26 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <article data-timings="">
     
 <div style='float:left;width:48%;' class='centered'>
-  <ul class = "build incremental">
+  <p><br></p>
+
+<ul class = "build incremental">
 <li>Must be quantitative data
 
 <ul>
-<li><strong>Not count data</strong>
-<br><br></li>
+<li><strong>Not count data</strong></li>
 </ul></li>
-<li>\(r =\) correlation between variables
-<br><br></li>
-<li>\(r^2 = \) amount of variance in y that is explained by x
-<br><br></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
+<li><p>\(r =\) correlation between variables</p></li>
+<li><p>\(r^2 = \) amount of variance in y that is explained by x</p></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li>p-value is still used for significance
 
 <ul>
@@ -819,7 +844,9 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 
 </div>
 <div style='float:right;width:48%;'>
-  <ul class = "build incremental">
+  <p><br></p>
+
+<ul class = "build incremental">
 <li>Correct - Reject a false \(H_0\)
 
 <ul>
@@ -859,11 +886,13 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-27">
-<hgroup>
-  <h2>Types of prevention</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>Types of prevention</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul class = "build incremental">
 <li><strong>P</strong>rimary - <strong>P</strong>revention
 
@@ -890,9 +919,10 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </ul></li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
+
 <slide class="" id="slide-28">
 <hgroup>
   <h2>Endemic vs Sporadic vs Epidemic vs Pandemic</h2>
@@ -903,11 +933,13 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-29">
-<hgroup>
-  <h2>Statistic differences lie in setting and time frame</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h2>Statistic differences lie in setting and time frame</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul class = "build incremental">
 <li><p>Attack rate</p>
 
@@ -930,9 +962,10 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </ul></li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
+
 <slide class="" id="slide-30" style="background:;">
   <hgroup>
     <h2>Odds and risk connect disease with exposure</h2>
@@ -1332,16 +1365,17 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <article data-timings="">
     <p><img src="assets/img/rocs_only.png" alt=""></p>
 
-<p><br></p>
-
 <ul class = "build incremental">
-<li>If the curves approximates the <strong>diagonal</strong>, it is a <strong>bad test</strong></li>
-</ul>
+<li>If the curve approximates the <strong>diagonal</strong>, it is a <strong>bad test</strong>
 
-<p><br></p>
+<ul>
+<li>\(AUC = 0.5\) for a bad test</li>
+</ul></li>
+<li>If the curve goes up the y-axis and then turns right down x-axis, it is a perfect test
 
-<ul class = "build incremental">
-<li>If the curve goes up the y-axis and then turns right down x-axis, it is a perfect test</li>
+<ul>
+<li>\(AUC = 1\) for a perfect test</li>
+</ul></li>
 </ul>
 
   </article>
@@ -1384,10 +1418,46 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 
 <slide class="" id="slide-50" style="background:;">
   <hgroup>
-    <h2>There are several fundamental differences</h2>
+    <h2>Motivation.. In medicine, frequentist statistics is not too useful</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p><br></p>
+
+<ul class = "build incremental">
+<li>The value lies in the intuitive approach</li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
+<li>Frequentist: goal is to approximate objective truth through repeated trials
+
+<ul>
+<li>The important metric is the probability that our estimate does <strong>not</strong> match reality</li>
+</ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
+<li>Bayesian: goal is to approximately objective truth by updating prior probability with new evidence
+
+<ul>
+<li>The important metric is the probability that our subjective experience matches reality</li>
+</ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
+<li>Example: given a clinical test, which do you care more about?
+
+<ul>
+<li>If your patient has disease, there is a 2% chance of getting a test result this extreme by chance.</li>
+<li>If your patient has a positive test, there is a 75% chance of having disease.</li>
+</ul></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -1423,11 +1493,13 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-54">
-<hgroup>
-  <h2>Biases of design or unseen variables</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+<slide class="" id="slide-54" style="background:;">
+  <hgroup>
+    <h2>Biases of design or unseen variables</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul class = "build incremental">
 <li>Selection bias
 
@@ -1438,11 +1510,6 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 
 <ul>
 <li>Observer is unblinded and expects a particular outcome</li>
-</ul></li>
-<li>Hawthorne effect
-
-<ul>
-<li>Subjects improve health behaviors because someone is watching</li>
 </ul></li>
 <li>Effect modification bias
 
@@ -1458,26 +1525,39 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </ul></li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-55">
-<hgroup>
-  <h2>Biases of information (measurement)</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+
+<slide class="" id="slide-55" style="background:;">
+  <hgroup>
+    <h2>Biases of information (measurement)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul class = "build incremental">
 <li>Recall bias
 
 <ul>
 <li>Subjects with disease can recall exposures better than healthy subjects</li>
 </ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li>Procedure bias
 
 <ul>
 <li>Experimenters vary systematically in the way they do work</li>
 <li>e.g. Experimenters don&#39;t follow the specified procedure</li>
 </ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li>Instrument bias
 
 <ul>
@@ -1487,14 +1567,17 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </ul></li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-56">
-<hgroup>
-  <h2>Biases of time and completion</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+
+<slide class="" id="slide-56" style="background:;">
+  <hgroup>
+    <h2>Biases of time and completion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul class = "build incremental">
 <li>Lead-time bias
 
@@ -1502,12 +1585,22 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 <li>New test detects disease earlier</li>
 <li>Survival appears improved with new test</li>
 </ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li>Attrition bias
 
 <ul>
 <li>Subjects systematically withdraw</li>
 <li>Could be things like side effects or lack of improvement</li>
 </ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li>Loss-to-follow up
 
 <ul>
@@ -1515,9 +1608,10 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </ul></li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
+
 <slide class="segue" id="slide-57" style="background:;">
   <hgroup>
     <h2>Types of studies</h2>
@@ -1560,51 +1654,68 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-61">
-<hgroup>
-  <h2>Randomized control trials are the gold standard</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+<slide class="" id="slide-61" style="background:;">
+  <hgroup>
+    <h2>Randomized control trials are the gold standard</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul class = "build incremental">
-<li>This is widely considered the gold standard for clinical evidence
-<br><br></li>
+<li>This is widely considered the gold standard for clinical evidence</li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li>Question: <strong>Primary</strong> purpose of randomization?</li>
 <li>Answer: To eliminate <strong>selection bias</strong>
 
 <ul>
-<li>Selection bias is eliminated if randomization is technically correct
-<br><br></li>
+<li>Selection bias is eliminated if randomization is technically correct</li>
 </ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li>Question: Secondary goal of randomization?</li>
 <li>Answer: To control confounders
 
 <ul>
-<li>Confounders are not necessarily eliminated even with perfect technical execution
-<br><br></li>
+<li>Confounders are not necessarily eliminated even with perfect technical execution</li>
 </ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li>Can use relative risk because investigator knows prevalence of disease and prior exposures</li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-62">
-<hgroup>
-  <h2>Crossover trial means the two groups switch</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
-<p><img src="assets/img/crossover.png" alt="">
-<br><br></p>
+
+<slide class="" id="slide-62" style="background:;">
+  <hgroup>
+    <h2>Crossover trial means the two groups switch</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/crossover.png" alt=""></p>
+
+<p><br></p>
 
 <ul>
-<li>This post hoc analysis is overly simplified for real life</li>
-<li>This understanding is sufficient for step 1</li>
-<li>Confounders reduced because a patient can serve as their own control</li>
+<li><p>This post hoc analysis is overly simplified for real life</p></li>
+<li><p>This understanding is sufficient for step 1</p></li>
+<li><p>Confounders reduced because a patient can serve as their own control</p></li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
+
 <slide class="" id="slide-63">
 <hgroup>
   
@@ -1635,16 +1746,22 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-66">
-<hgroup>
-  <h2>Cohorts form the next level of evidence</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+<slide class="" id="slide-66" style="background:;">
+  <hgroup>
+    <h2>Cohorts form the next level of evidence</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul class = "build incremental">
 <li>Can use relative risk because investigator knows prevalence of exposure and disease</li>
 <li>Subjects vary by exposure status</li>
-<li>Can calculate incidence
-<br><br></li>
+<li>Can calculate incidence</li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li><strong>Selection bias</strong> is the biggest problem
 
 <ul>
@@ -1653,9 +1770,13 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 <li>Other biases
 
 <ul>
-<li>Attrition, loss-to-follow up, confounding, Hawthorne
-<br><br></li>
+<li>Attrition, loss-to-follow up, confounding, Hawthorne</li>
 </ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li>Retrospective
 
 <ul>
@@ -1663,9 +1784,10 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </ul></li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
+
 <slide class="" id="slide-67">
 <hgroup>
   <h2>Case-control trials measure chance of exposure given disease</h2>
@@ -1676,11 +1798,13 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-68">
-<hgroup>
-  <h2>Case-control forms the next level down from cohorts</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+<slide class="" id="slide-68" style="background:;">
+  <hgroup>
+    <h2>Case-control forms the next level down from cohorts</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul class = "build incremental">
 <li>Must use odds ratio because investigator does not know prevalence of disease</li>
 <li>Subjects grouped by cases and controls
@@ -1707,9 +1831,10 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 <li><strong>Cannot calculate incidence or prevalence</strong></li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
+
 <slide class="" id="slide-69">
 <hgroup>
   <h2>Cross-sectional trials measure exposure and disease simultaneously</h2>
@@ -1720,11 +1845,13 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-70">
-<hgroup>
-  <h2>Cross-sectional study form next level evidence</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
+<slide class="" id="slide-70" style="background:;">
+  <hgroup>
+    <h2>Cross-sectional study form next level evidence</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
 <ul class = "build incremental">
 <li><strong>Quick, cheap, and easy</strong>
 
@@ -1733,15 +1860,20 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </ul></li>
 <li>Can establish prevalence of disease</li>
 <li>Must use chi-squared or correlation for statistical test</li>
-<li>Subjects can be grouped by exposure and diease in to the 2x2 contingency
-<br><br></li>
+<li>Subjects can be grouped by exposure and diease in to the 2x2 contingency</li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
 <li><strong>Cannot establish causation</strong></li>
 <li>Cannot calculate risk metrics</li>
 </ul>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
+
 <slide class="" id="slide-71" style="background:;">
   <hgroup>
     <h2>Question #8</h2>
@@ -2412,7 +2544,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=50 title='There are several fundamental differences'>
+        data-slide=50 title='Motivation.. In medicine, frequentist statistics is not too useful'>
          50
       </a>
     </li>

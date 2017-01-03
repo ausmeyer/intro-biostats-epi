@@ -52,21 +52,22 @@ body {background:grey transparent;
 --- .segue
 ## Biostatistics Basics
 
---- &vcenter
+---
 ## There are some important random terms
 
+<br>
 > - Generalizability
   - How applicable is a finding to the general population
-<br>
+  
 > - P-value
   - Probability of finding a value this extreme by random chance
-<br>
+  
 > - Confidence Interval
   - Interval over which population value is found with a specified probability (e.g. 95%)
-<br>
+  
 > - Efficacy
   - Performance of treatment under ideal circumstances
-<br>
+  
 > - Effectiveness
   - Performance of treatment under real world circumstances
 
@@ -154,18 +155,21 @@ Always remember that the y-axis on these plots are counts or frequency. Therefor
 --- .segue
 ## Hypothesis Testing
 
---- &vcenter
+---
 ## The null hypothesis (\(H_0\)) is always the default
 
+<br>
 > - Assume:
   - There are two or more groups being compared, or 
   - One group being compared to zero, or
   - One group is being compared to expectation.
-<br><br>
+
+<br>
 > - For Step 1, probably safe to assume null is always rejected with \(p < 0.05\).
   - For ratios (e.g. Relative Risk, Odds Ratio), a 95% CI __not__ overlapping 1 is significant.
   - For two sample tests, it is less straightforward how the CI relates to the p-value
-<br><br>
+
+<br>
 > - Once \(H_0\) is rejected, we accept the alternative hypothesis \(H_A\).
 
 --- &twocol
@@ -185,11 +189,12 @@ Always remember that the y-axis on these plots are counts or frequency. Therefor
 --- &vcenter
 <div class="centered"><font size="7">Will the plot be significant?</font size></div>
 
---- &vcenter
+---
 ## T-test compares means of one or two groups
 
- - Two sample: \(H_0\) = There is no difference between the disease and no disease groups
  <br>
+ - Two sample: \(H_0\) = There is no difference between the disease and no disease groups
+ 
  - Run the t-test
   
   ```r
@@ -201,8 +206,9 @@ Always remember that the y-axis on these plots are counts or frequency. Therefor
   ```
   ## [1] 4.687206e-88
   ```
-  > - Have we rejected the null hypothesis?
   <br>
+  > - Have we rejected the null hypothesis?
+  
   > - Yes, we have accepted \(H_A\). There is a difference between disease and no disease groups.
 
 ---
@@ -211,9 +217,10 @@ Always remember that the y-axis on these plots are counts or frequency. Therefor
 
 <iframe src=http://meyerapps.org/statistical_biological_significance/></iframe>
 
---- &vcenter
+---
 ## Chi-squared test uses categorical (count) data
 
+<br>
 > - Two common tests
  - Goodness-of-fit
  - Test of independence
@@ -267,13 +274,16 @@ The correlation can be positive or negative
 --- &twocol
 ## For correlation, r is the critical statistic
 ***=left
+<br>
 > - Must be quantitative data
  - **Not count data**
-<br><br>
+
+<br>
 > - \(r =\) correlation between variables
-<br><br>
+
 > - \(r^2 = \) amount of variance in y that is explained by x
-<br><br>
+
+<br>
 > - p-value is still used for significance
  - For Step 1, most likely significant at \(p < 0.05\)
 
@@ -337,6 +347,7 @@ The two sample T-test is the appropriate test in this case. The two sample Mann-
 ![](assets/img/truth_table.png)
 
 ***=right
+<br>
 > - Correct - Reject a false \(H_0\)
  - Probability of success is called "power"
  - Power depends on sample size
@@ -351,9 +362,10 @@ The two sample T-test is the appropriate test in this case. The two sample Mann-
 --- .segue
 ## Epidemiology
 
---- &vcenter
+---
 ## Types of prevention
-  
+
+<br>
 > - __P__rimary - __P__revention
   - An action taken to prevent development of disease in a person who is well
   <br>
@@ -371,9 +383,10 @@ The two sample T-test is the appropriate test in this case. The two sample Mann-
 
 ![](assets/img/epidemic.jpg)
 
---- &vcenter
+---
 ## Statistic differences lie in setting and time frame
-  
+
+<br>
 > - Attack rate
   - Typically used __during epidemics or pandemics__
   - Number of people who get disease / Number of people at risk
@@ -589,11 +602,10 @@ Question prefaces a positive test result
 
 ![](assets/img/rocs_only.png)
 
-<br>
-> - If the curves approximates the __diagonal__, it is a __bad test__
-
-<br>
+> - If the curve approximates the __diagonal__, it is a __bad test__
+  - \(AUC = 0.5\) for a bad test
 > - If the curve goes up the y-axis and then turns right down x-axis, it is a perfect test
+  - \(AUC = 1\) for a perfect test
 
 --- &vcenter
 ## ROC curves also establish the optimal dichotomous cutoff
@@ -613,7 +625,23 @@ __Again, the best cutoff is the x-value that maximizes the distance from the dia
 ## Minimal Bayesian statistics
 
 ---
-## There are several fundamental differences
+## Motivation.. In medicine, frequentist statistics is not too useful
+
+<br>
+> - The value lies in the intuitive approach
+
+<br>
+> - Frequentist: goal is to approximate objective truth through repeated trials
+  - The important metric is the probability that our estimate does __not__ match reality
+  
+<br>
+> - Bayesian: goal is to approximately objective truth by updating prior probability with new evidence
+  - The important metric is the probability that our subjective experience matches reality
+
+<br>
+> - Example: given a clinical test, which do you care more about?
+  - If your patient has disease, there is a 2% chance of getting a test result this extreme by chance.
+  - If your patient has a positive test, there is a 75% chance of having disease.
 
 --- 
 ## Basic structure involves adding new information to probability
@@ -626,14 +654,14 @@ __Again, the best cutoff is the x-value that maximizes the distance from the dia
 --- .segue
 ## Types of Biases - My groupings
 
---- &vcenter
+---
 ## Biases of design or unseen variables
+
+<br>
 > - Selection bias
   - Non-random partitioning of individuals into groups
 > - Observer-expectancy
   - Observer is unblinded and expects a particular outcome
-> - Hawthorne effect
-  - Subjects improve health behaviors because someone is watching
 > - Effect modification bias
   - Magnitude of effect varies by third variable
   - __Can__ be eliminated by stratification
@@ -641,26 +669,38 @@ __Again, the best cutoff is the x-value that maximizes the distance from the dia
   - Unseen third variable is an underlying cause for correlation of two other variables
   - __Cannot__ be eliminated by stratification
 
---- &vcenter
+---
 ## Biases of information (measurement)
+
+<br>
 > - Recall bias
   - Subjects with disease can recall exposures better than healthy subjects
+  
+<br>
 > - Procedure bias
   - Experimenters vary systematically in the way they do work
   - e.g. Experimenters don't follow the specified procedure
+  
+<br>
 > - Instrument bias
   - Instrument is broken
   - Instruments can also be things like surveys or __clerkship evaluations__
   - Just means instrument is not reliable
 
---- &vcenter
+---
 ## Biases of time and completion
+
+<br>
 > - Lead-time bias
   - New test detects disease earlier
   - Survival appears improved with new test
+  
+<br>
 > - Attrition bias
   - Subjects systematically withdraw
   - Could be things like side effects or lack of improvement
+  
+<br>
 > - Loss-to-follow up
   - Subjects randomly do not report for scheduled followup
 
@@ -681,26 +721,34 @@ __Closer to the top means better evidence__
 ## Randomized control trial is in the name
 ![](assets/img/randomized_control.png)
 
---- &vcenter
+---
 ## Randomized control trials are the gold standard
+
+<br>
 > - This is widely considered the gold standard for clinical evidence
-<br><br>
+
+<br>
 > - Question: __Primary__ purpose of randomization?
 > - Answer: To eliminate __selection bias__
   - Selection bias is eliminated if randomization is technically correct
-<br><br>
+
+<br>
 > - Question: Secondary goal of randomization?
 > - Answer: To control confounders
   - Confounders are not necessarily eliminated even with perfect technical execution
-<br><br>
+
+<br>
 > - Can use relative risk because investigator knows prevalence of disease and prior exposures
 
---- &vcenter
+---
 ## Crossover trial means the two groups switch
 ![](assets/img/crossover.png)
-<br><br>
+
+ <br>
  - This post hoc analysis is overly simplified for real life
+ 
  - This understanding is sufficient for step 1
+ 
  - Confounders reduced because a patient can serve as their own control
 
 --- &vcenter
@@ -716,17 +764,21 @@ __Closer to the top means better evidence__
 
 ![](assets/img/retrospective_cohort.png)
 
---- &vcenter
+---
 ## Cohorts form the next level of evidence
+ 
+ <br>
  > - Can use relative risk because investigator knows prevalence of exposure and disease
  > - Subjects vary by exposure status
  > - Can calculate incidence
- <br><br>
+ 
+ <br>
  > - __Selection bias__ is the biggest problem
    - Investigator has infinite control over inclusion
  > - Other biases
    - Attrition, loss-to-follow up, confounding, Hawthorne
- <br><br>
+   
+ <br>
  > - Retrospective
    - Information bias
 
@@ -734,8 +786,9 @@ __Closer to the top means better evidence__
 ## Case-control trials measure chance of exposure given disease
 ![](assets/img/case_control.png)
 
---- &vcenter
+---
 ## Case-control forms the next level down from cohorts
+ <br>
  > - Must use odds ratio because investigator does not know prevalence of disease
  > - Subjects grouped by cases and controls
    - Measure __odds of exposure__ in case and control groups
@@ -752,14 +805,17 @@ __Closer to the top means better evidence__
 ## Cross-sectional trials measure exposure and disease simultaneously
 ![](assets/img/cross_sectional.png)
 
---- &vcenter
+---
 ## Cross-sectional study form next level evidence
+
+ <br>
  > - __Quick, cheap, and easy__
    - Typically this is a starting point
  > - Can establish prevalence of disease
  > - Must use chi-squared or correlation for statistical test
  > - Subjects can be grouped by exposure and diease in to the 2x2 contingency
- <br><br>
+ 
+ <br>
  > - __Cannot establish causation__
  > - Cannot calculate risk metrics
 
