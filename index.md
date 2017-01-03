@@ -619,7 +619,7 @@ __Again, the best cutoff is the x-value that maximizes the distance from the dia
 ## Basic structure involves adding new information to probability
 
 ---
-## Real example: probability of pneumococcal pneumonia given positive CXR
+## Real example: prob. of pneumococcal pneumonia given +CXR
 
 <iframe src=http://meyerapps.org/pneumococcal_etiology_hiv/></iframe>
 
