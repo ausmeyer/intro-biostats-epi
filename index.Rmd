@@ -948,7 +948,7 @@ __Again, the best cutoff is the x-value that maximizes the distance from the dia
   
 <br>
 > - Do something (e.g. rapid flu test)
-  - Flu test: __\(Sensitivity \approx 70\%\)__ and __\(Specificity \approx 95\%\)__
+  - Absolute best Rapid Flu test: __\(Sensitivity \approx 70\%\)__ and __\(Specificity \approx 95\%\)__
   - If positive, use likelihood ratio positive (a.k.a. bayes factor positive)
     - __\(LR+ = \frac{sensitivity}{1 - specificity} = \frac{0.7}{1 - 0.95} = 14\)__
   - If negative, use likelihood ratio negative (a.k.a. bayes factor negative)
