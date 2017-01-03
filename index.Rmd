@@ -108,7 +108,7 @@ ggplot(data.frame(data = studentt), aes(data)) +
   ylim(0, 950) +
   ggtitle("Student t Distribution") + 
   labs(x="", y="") +
-  theme_bw()
+  theme_bw() +
   annotate("text", x = -10, y = 950, label = "Mean = Median = Mode", size=5, hjust = 0) +
   annotate("text", x = -10, y = 900, label = "95% CI depends on degrees of freedom", size=5, hjust = 0)
 ```

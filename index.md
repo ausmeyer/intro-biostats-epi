@@ -87,10 +87,6 @@ body {background:grey transparent;
 ***=right
 ![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png)
 
-```
-## Error in annotate("text", x = -10, y = 950, label = "Mean = Median = Mode", : non-numeric argument to binary operator
-```
-
 ---  &radio
 ## Question #1
 
