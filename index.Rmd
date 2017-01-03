@@ -393,8 +393,8 @@ plot_grid(pos, neg)
 
 --- &twocol
 ## For correlation, r is the critical statistic
-***=left
 <br>
+***=left
 > - Must be quantitative data
  - **Not count data**
 
@@ -632,7 +632,7 @@ What gives a narrower confidence interval?
 
 --- &twocol
 ## Absolute risk reduction is a risk difference
-
+<br>
 ***=left
 > - Reminder
   - Exposed: \(Risk = \frac{A}{A + B}\)
@@ -698,7 +698,7 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
 
 --- &vcenter
 ## Specificity: Efficiency of finding **TRUE NEGATIVES** in Real Negatives
-  
+
 ```{r, fig.width = 12, fig.height = 7, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
 norm1 <- rnorm(5000, mean = 4.25, sd = 1.5)
@@ -749,7 +749,7 @@ ggplot(data.frame(data = c(norm1, norm2), Groups = c(rep('No Disease', length(no
 
 --- &twocol
 ## Unlike Sens and Spec, PPV and NPV vary with pre-test probability
-
+<br>
 ***=left
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
@@ -789,7 +789,7 @@ ggplot(data, aes(x = x, y = y)) +
 
 --- &twocol
 ## PPV ~ Specificity and NPV ~ Sensitivity
-
+<br>
 ***=left
 ```{r, fig.height = 6.5, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)

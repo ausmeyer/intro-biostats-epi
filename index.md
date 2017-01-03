@@ -273,8 +273,8 @@ The correlation can be positive or negative
 
 --- &twocol
 ## For correlation, r is the critical statistic
-***=left
 <br>
+***=left
 > - Must be quantitative data
  - **Not count data**
 
@@ -467,7 +467,7 @@ What gives a narrower confidence interval?
 
 --- &twocol
 ## Absolute risk reduction is a risk difference
-
+<br>
 ***=left
 > - Reminder
   - Exposed: \(Risk = \frac{A}{A + B}\)
@@ -496,7 +496,7 @@ What gives a narrower confidence interval?
 
 --- &vcenter
 ## Specificity: Efficiency of finding **TRUE NEGATIVES** in Real Negatives
-  
+
 ![plot of chunk unnamed-chunk-17](assets/fig/unnamed-chunk-17-1.png)
 
 --- &twocol
@@ -533,7 +533,7 @@ What gives a narrower confidence interval?
 
 --- &twocol
 ## Unlike Sens and Spec, PPV and NPV vary with pre-test probability
-
+<br>
 ***=left
 ![plot of chunk unnamed-chunk-18](assets/fig/unnamed-chunk-18-1.png)
 
@@ -553,7 +553,7 @@ What gives a narrower confidence interval?
 
 --- &twocol
 ## PPV ~ Specificity and NPV ~ Sensitivity
-
+<br>
 ***=left
 ![plot of chunk unnamed-chunk-19](assets/fig/unnamed-chunk-19-1.png)
 
