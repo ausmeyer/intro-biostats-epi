@@ -100,14 +100,14 @@ body {background:grey transparent;
   <strong>Epidemiology</strong></p>
 
 <ul>
-<li>Prevention and outbreaks - 4 minutes</li>
+<li>Prevention and Outbreaks - 5 minutes</li>
 <li>Disease metrics - 5 minutes</li>
 <li>Measures of risk - 10 minutes</li>
-<li>Clinical test characteristics - 6 minutes</li>
+<li>Clinical test characteristics - 15 minutes</li>
 <li>Minimal Bayesian statistics - 10 minutes</li>
 <li>Study bias - Mostly for independent</li>
 <li>Types of studies - 10 minutes</li>
-<li>Cinical applications - 25 minutes</li>
+<li>Cinical application - 15 minutes</li>
 </ul>
 
 </div>
@@ -346,7 +346,7 @@ body {background:grey transparent;
 
 <ul>
 <li>There are two or more groups being compared, or </li>
-<li>One group being compared to zero, or</li>
+<li>One group is being compared to zero, or</li>
 <li>One group is being compared to expectation.</li>
 </ul></li>
 </ul>
@@ -358,7 +358,7 @@ body {background:grey transparent;
 
 <ul>
 <li>For ratios (e.g. Relative Risk, Odds Ratio), a 95% CI <strong>not</strong> overlapping 1 is significant.</li>
-<li>For two sample tests, it is less straightforward how the CI relates to the p-value</li>
+<li>For two sample tests, it is less straightforward how the CI relates to the p-value so don&#39;t worry about it.</li>
 </ul></li>
 </ul>
 
@@ -377,20 +377,39 @@ body {background:grey transparent;
     <h2>T-test compares means of one or two groups</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p><br></p>
+
 <div style='float:left;width:48%;' class='centered'>
   <p><img src="assets/fig/unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8"></p>
 
 </div>
 <div style='float:right;width:48%;'>
-  <p><br><br></p>
+  <ul class = "build incremental">
+<li>One sample test
+
+<ul>
+<li>\(H_0\) = There is no difference between group mean and zero</li>
+</ul></li>
+</ul>
+
+<p><br></p>
 
 <ul class = "build incremental">
-<li>One sample: \(H_0\) = There is no difference between group mean and zero
-<br><br></li>
-<li>Two sample: \(H_0\) = There is no difference between the disease and no disease groups
-<br><br></li>
-<li>Paired: \(H_0\) = The difference of a measured variable between two time points on the same individuals is zero</li>
+<li>Two sample test
+
+<ul>
+<li>\(H_0\) = There is no difference between the disease and no disease groups</li>
+</ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build incremental">
+<li>Paired test
+
+<ul>
+<li>\(H_0\) = The difference of a measured variable between two time points on the same individuals is zero</li>
+</ul></li>
 </ul>
 
 </div>
@@ -417,7 +436,7 @@ body {background:grey transparent;
 
 <ul>
 <li><p>Two sample: \(H_0\) = There is no difference between the disease and no disease groups</p></li>
-<li><p>Run the t-test</p>
+<li><p>Run the T-test (in this case, in R language)</p>
 
 <pre><code class="r">norm1 &lt;- rnorm(5000, mean = 4.75, sd = 1.2)
 norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
@@ -467,8 +486,8 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 <li>Goodness-of-fit
 
 <ul>
-<li>\(H_0\): The number of cases occuring in a subgroup is consistent with expected</li>
-<li>\(H_A\): The number of cases occuring in a subgroup is not consistent with expected</li>
+<li>\(H_0\): The number of cases occuring in a subgroup is consistent with random expectation</li>
+<li>\(H_A\): The number of cases occuring in a subgroup is not consistent with random expectation</li>
 </ul></li>
 <li>Test of independence
 
@@ -656,18 +675,19 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-20">
-<hgroup>
-  <h2>Pearson correlation compares two variables</h2>
-</hgroup>
-<article class = 'flexbox vcenter'>
-<p>The correlation can be positive or negative</p>
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Pearson correlation compares values of two variables</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Spearman correlation compares ranked values of two variables</strong></p>
 
 <p><img src="assets/fig/unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10"></p>
 
-</article>
-<!-- Presenter Notes -->
+  </article>
+  <!-- Presenter Notes -->
 </slide>
+
 <slide class="" id="slide-21" style="background:;">
   <hgroup>
     <h2>For correlation, r is the critical statistic</h2>
@@ -1012,7 +1032,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   <article data-timings="">
     
 <div class="quiz quiz-single well ">
-  <p>Investigators are studying the association between mesothelioma and asbestos exposure. Due to the relative rarity of the disease, they design a very large case-control study. In the end, they find an \(OR = 20 (19.54;20.52, p < 0.001)\). After assuming that the OR is a good approximation of risk, the authors conclude that the risk of mesothelioma is 20 times higher in those exposed to asbestos compared to control. Why is their assumption reasonable?</p>
+  <p>Investigators are studying the association between mesothelioma and asbestos exposure. Due to the relative rarity of the disease, they design a very large case-control study. In the end, they find an \(OR = 20\ (19.54;20.52,\ p < 0.001)\). After assuming that the OR is a good approximation of risk, the authors conclude that the risk of mesothelioma is 20 times higher in those exposed to asbestos compared to control. Why is their assumption reasonable?</p>
 
 <ol>
 <li><em>The incidence of mesothelioma in the population is low</em></li>
@@ -1166,10 +1186,10 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   </hgroup>
   <article data-timings="">
     <ul class = "build incremental">
-<li><strong>These quantities are the defining characteristics of any clinical test</strong>.
+<li><strong>These are the defining characteristics of any clinical finding (e.g. history, physical, test, image)</strong>.
 
 <ul>
-<li>They do not depend on anything except the test.</li>
+<li>They do not depend on anything... they are intrinsic to the exam/test</li>
 </ul></li>
 </ul>
 
@@ -1186,7 +1206,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 
 <ul>
 <li>Without sensitivity and specificity, you cannot make a ROC curve</li>
-<li>Never trust a paper, poster, or company presentation that does not include an ROC curve</li>
+<li>Never trust a paper, poster, or company presentation that does not include a ROC curve</li>
 </ul></li>
 </ul>
 
@@ -1216,7 +1236,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 
 <slide class="" id="slide-39">
 <hgroup>
-  <h2>Sensitivity and specificity are continuous in clinical tests</h2>
+  <h2>Sensitivity and specificity are continuous when a test is continuous</h2>
 </hgroup>
 <article class = 'flexbox vcenter'>
 <p><img src="assets/img/sensitivities_specificities.png" alt=""></p>
@@ -1271,7 +1291,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 </slide>
 <slide class="" id="slide-42" style="background:;">
   <hgroup>
-    <h2>PPV ~ Specificity and NPV ~ Sensitivity</h2>
+    <h2>PPV goes more with Specificity and NPV goes more with Sensitivity</h2>
   </hgroup>
   <article data-timings="">
     <p><br></p>
@@ -1324,7 +1344,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   </div>
   <div class='span6'>
     <div class="quiz quiz-single well new">
-      <p>Assume a steady-state population that is not changing in anyway. Which of the following statements is true for people who test positive regarding moving the cutoff for a positive test from the solid to the dotted line?</p>
+      <p>Assume a steady-state population that is not changing in any way. Which of the following statements is true for people who test positive regarding moving the cutoff for a positive test from the solid to the dotted line?</p>
 
 <ol>
 <li>Decrease in test specificity</li>
@@ -1362,7 +1382,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 
 <slide class="" id="slide-46" style="background:;">
   <hgroup>
-    <h2>ROC curves visually define clinical test value</h2>
+    <h2>ROC curves visually define clinical test yield</h2>
   </hgroup>
   <article data-timings="">
     <p><img src="assets/img/rocs_only.png" alt=""></p>
@@ -1391,7 +1411,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 <article class = 'flexbox vcenter'>
 <p><img src="assets/img/rocs_youden.png" alt=""></p>
 
-<p><strong>The best cutoff is the x-value that maximizes the distance from the diagonal to the curve</strong></p>
+<p><strong>The highest yield cutoff is the x-value that maximizes the distance from the diagonal to the curve</strong></p>
 
 </article>
 <!-- Presenter Notes -->
@@ -1442,7 +1462,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 <p><br></p>
 
 <ul class = "build incremental">
-<li>Bayesian: goal is to approximately objective truth by updating prior probability with new evidence
+<li>Bayesian: goal is to approximate objective truth by updating prior probability with new evidence
 
 <ul>
 <li>The important metric is the probability that our subjective experience matches reality</li>
@@ -1466,7 +1486,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 
 <slide class="" id="slide-51" style="background:;">
   <hgroup>
-    <h2>Basic structure involves adding new information to probability</h2>
+    <h2>Involves adding new information to existing probability</h2>
   </hgroup>
   <article data-timings="">
     <p><br></p>
@@ -1475,7 +1495,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 <li>Start with pre-test probability
 
 <ul>
-<li>This data is available all over the place</li>
+<li>This data is available all over the place (e.g. any prevalence data)</li>
 <li>Example: Region 6 prevalence of influenza right now is <strong>\(\approx 4\%\)</strong></li>
 </ul></li>
 </ul>
@@ -1500,7 +1520,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 
 <slide class="" id="slide-52" style="background:;">
   <hgroup>
-    <h2>Adjust probability with the following procedure</h2>
+    <h2>Adjust the probability of disease with the following procedure</h2>
   </hgroup>
   <article data-timings="">
     <p><br></p>
@@ -1522,7 +1542,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
 <li>Positive test: \(0.04 \rightarrow 0.04/0.96 = 0.042 \rightarrow 0.042 * 14 = 0.583 \rightarrow 0.583/1.583 = 0.37\)
 
 <ul>
-<li>Post-test probability following <strong>positive</strong> test: <strong>\(35\%\)</strong></li>
+<li>Post-test probability following <strong>positive</strong> test: <strong>\(37\%\)</strong></li>
 </ul></li>
 </ul>
 
@@ -2160,7 +2180,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   </div>
   <div class='span6'>
     <div class="quiz quiz-single well new">
-      <p>What is the absolute risk reduction of having a female physician?</p>
+      <p>Controlling for physician characteristics as before, what is the absolute risk reduction of having a female physician?</p>
 
 <ol>
 <li><em>0.0042</em></li>
@@ -2207,7 +2227,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   </div>
   <div class='span6'>
     <div class="quiz quiz-single well new">
-      <p>Within this study population, on average how many patients would need to be treated by a female physician to save a life?</p>
+      <p>Given the information from the previous slide, on average how many patients would need to be treated by a female physician to save a life?</p>
 
 <ol>
 <li>2.4</li>
@@ -2258,7 +2278,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
   </div>
   <div class='span6'>
     <div class="quiz quiz-single well new">
-      <p>Within the context of this study, if we no longer allowed men to treat general medicine patients approximately how long on average would it take for a female physician to save a patient that otherwise would have died under the previous treatment system?</p>
+      <p>Given the information from the previous slide, if we no longer allowed men to treat general medicine patients approximately how long on average would it take for a female physician to save a patient that otherwise would have died under the previous treatment system?</p>
 
 <ol>
 <li>2 months</li>
@@ -2433,7 +2453,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='Pearson correlation compares two variables'>
+        data-slide=20 title='Pearson correlation compares values of two variables'>
          20
       </a>
     </li>
@@ -2547,7 +2567,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=39 title='Sensitivity and specificity are continuous in clinical tests'>
+        data-slide=39 title='Sensitivity and specificity are continuous when a test is continuous'>
          39
       </a>
     </li>
@@ -2565,7 +2585,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=42 title='PPV ~ Specificity and NPV ~ Sensitivity'>
+        data-slide=42 title='PPV goes more with Specificity and NPV goes more with Sensitivity'>
          42
       </a>
     </li>
@@ -2589,7 +2609,7 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title='ROC curves visually define clinical test value'>
+        data-slide=46 title='ROC curves visually define clinical test yield'>
          46
       </a>
     </li>
@@ -2619,13 +2639,13 @@ norm2 &lt;- rnorm(5000, mean = 5.25, sd = 1.2)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=51 title='Basic structure involves adding new information to probability'>
+        data-slide=51 title='Involves adding new information to existing probability'>
          51
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=52 title='Adjust probability with the following procedure'>
+        data-slide=52 title='Adjust the probability of disease with the following procedure'>
          52
       </a>
     </li>

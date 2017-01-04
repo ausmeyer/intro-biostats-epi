@@ -40,14 +40,14 @@ body {background:grey transparent;
 ***=right
   <br>
   **Epidemiology**
-  - Prevention and outbreaks - 4 minutes
+  - Prevention and Outbreaks - 5 minutes
   - Disease metrics - 5 minutes
   - Measures of risk - 10 minutes
-  - Clinical test characteristics - 6 minutes
+  - Clinical test characteristics - 15 minutes
   - Minimal Bayesian statistics - 10 minutes
   - Study bias - Mostly for independent
   - Types of studies - 10 minutes
-  - Cinical applications - 25 minutes
+  - Cinical application - 15 minutes
 
 --- .segue
 ## Biostatistics Basics
@@ -161,13 +161,13 @@ Always remember that the y-axis on these plots are counts or frequency. Therefor
 <br>
 > - Assume:
   - There are two or more groups being compared, or 
-  - One group being compared to zero, or
+  - One group is being compared to zero, or
   - One group is being compared to expectation.
 
 <br>
 > - For Step 1, probably safe to assume null is always rejected with \(p < 0.05\).
   - For ratios (e.g. Relative Risk, Odds Ratio), a 95% CI __not__ overlapping 1 is significant.
-  - For two sample tests, it is less straightforward how the CI relates to the p-value
+  - For two sample tests, it is less straightforward how the CI relates to the p-value so don't worry about it.
 
 <br>
 > - Once \(H_0\) is rejected, we accept the alternative hypothesis \(H_A\).
@@ -175,16 +175,21 @@ Always remember that the y-axis on these plots are counts or frequency. Therefor
 --- &twocol
 ## T-test compares means of one or two groups
 
+<br>
 ***=left
 ![plot of chunk unnamed-chunk-8](assets/fig/unnamed-chunk-8-1.png)
 
 ***=right 
-<br><br>
-> - One sample: \(H_0\) = There is no difference between group mean and zero
-<br><br>
-> - Two sample: \(H_0\) = There is no difference between the disease and no disease groups
-<br><br>
-> - Paired: \(H_0\) = The difference of a measured variable between two time points on the same individuals is zero
+> - One sample test
+  - \(H_0\) = There is no difference between group mean and zero
+
+<br>
+> - Two sample test
+  - \(H_0\) = There is no difference between the disease and no disease groups
+
+<br>
+> - Paired test
+  - \(H_0\) = The difference of a measured variable between two time points on the same individuals is zero
 
 --- &vcenter
 <div class="centered"><font size="7">Will the plot be significant?</font size></div>
@@ -195,7 +200,7 @@ Always remember that the y-axis on these plots are counts or frequency. Therefor
  <br>
  - Two sample: \(H_0\) = There is no difference between the disease and no disease groups
  
- - Run the t-test
+ - Run the T-test (in this case, in R language)
   
   ```r
   norm1 <- rnorm(5000, mean = 4.75, sd = 1.2)
@@ -225,8 +230,8 @@ Always remember that the y-axis on these plots are counts or frequency. Therefor
  - Goodness-of-fit
  - Test of independence
 > - Goodness-of-fit
- - \(H_0\): The number of cases occuring in a subgroup is consistent with expected
- - \(H_A\): The number of cases occuring in a subgroup is not consistent with expected
+ - \(H_0\): The number of cases occuring in a subgroup is consistent with random expectation
+ - \(H_A\): The number of cases occuring in a subgroup is not consistent with random expectation
 > - Test of independence
  - \(H_0\): Categorical variable A and categorical variable B are independent
  - \(H_A\): Categorical variable A and categorical variable B are not independent
@@ -265,9 +270,11 @@ Table 2: A 3x3 contingency table
 | Total           |    530      |         691        |      372        |     276      |   249        |  2118  |
 Table 3: A 7x5 contingency table
 
---- &vcenter
-## Pearson correlation compares two variables
-The correlation can be positive or negative
+---
+## Pearson correlation compares values of two variables
+
+__Spearman correlation compares ranked values of two variables__
+
 
 ![plot of chunk unnamed-chunk-10](assets/fig/unnamed-chunk-10-1.png)
 
@@ -423,7 +430,7 @@ The two sample T-test is the appropriate test in this case. The two sample Mann-
 --- &radio
 ## Question #6
 
-Investigators are studying the association between mesothelioma and asbestos exposure. Due to the relative rarity of the disease, they design a very large case-control study. In the end, they find an \(OR = 20 (19.54;20.52, p < 0.001)\). After assuming that the OR is a good approximation of risk, the authors conclude that the risk of mesothelioma is 20 times higher in those exposed to asbestos compared to control. Why is their assumption reasonable?
+Investigators are studying the association between mesothelioma and asbestos exposure. Due to the relative rarity of the disease, they design a very large case-control study. In the end, they find an \(OR = 20\ (19.54;20.52,\ p < 0.001)\). After assuming that the OR is a good approximation of risk, the authors conclude that the risk of mesothelioma is 20 times higher in those exposed to asbestos compared to control. Why is their assumption reasonable?
 
 1. _The incidence of mesothelioma in the population is low_
 2. The sample size of this study is very large
@@ -501,8 +508,9 @@ What gives a narrower confidence interval?
 
 --- &twocol
 ## Sensitivity and Specificity are critically important for all of medicine
-> - __These quantities are the defining characteristics of any clinical test__.
-  - They do not depend on anything except the test.
+
+> - __These are the defining characteristics of any clinical finding (e.g. history, physical, test, image)__.
+  - They do not depend on anything... they are intrinsic to the exam/test
 
 <br>
 
@@ -512,7 +520,7 @@ What gives a narrower confidence interval?
 
 > - Therefore, if you do not know the sensitivity or specificity of a test, you are missing information
   - Without sensitivity and specificity, you cannot make a ROC curve
-  - Never trust a paper, poster, or company presentation that does not include an ROC curve
+  - Never trust a paper, poster, or company presentation that does not include a ROC curve
   
 ***=left
 <br>
@@ -527,7 +535,7 @@ What gives a narrower confidence interval?
 > - \(AllRealNegatives = TN + FP\)
 
 --- &vcenter
-## Sensitivity and specificity are continuous in clinical tests
+## Sensitivity and specificity are continuous when a test is continuous
 
 ![](assets/img/sensitivities_specificities.png)
 
@@ -552,7 +560,7 @@ What gives a narrower confidence interval?
 <div class="centered"><font size="6">PPV depends more on sensitivity or specificity?</font size></div>
 
 --- &twocol
-## PPV ~ Specificity and NPV ~ Sensitivity
+## PPV goes more with Specificity and NPV goes more with Sensitivity
 <br>
 ***=left
 ![plot of chunk unnamed-chunk-19](assets/fig/unnamed-chunk-19-1.png)
@@ -576,7 +584,7 @@ What gives a narrower confidence interval?
 --- &radio2
 ## Question #5
 
-Assume a steady-state population that is not changing in anyway. Which of the following statements is true for people who test positive regarding moving the cutoff for a positive test from the solid to the dotted line?
+Assume a steady-state population that is not changing in any way. Which of the following statements is true for people who test positive regarding moving the cutoff for a positive test from the solid to the dotted line?
 
 1. Decrease in test specificity
 2. Increase in test sensitivity
@@ -598,7 +606,7 @@ Question prefaces a positive test result
 5. Incorrect - The question is concerned about positives tests which do not factor into negative predictive value
 
 ---
-## ROC curves visually define clinical test value
+## ROC curves visually define clinical test yield
 
 ![](assets/img/rocs_only.png)
 
@@ -612,7 +620,7 @@ Question prefaces a positive test result
 
 ![](assets/img/rocs_youden.png)
 
-__The best cutoff is the x-value that maximizes the distance from the diagonal to the curve__
+__The highest yield cutoff is the x-value that maximizes the distance from the diagonal to the curve__
 
 --- &vcenter
 ## With the optimal cutoff found, it maps to clinical test results
@@ -635,7 +643,7 @@ __Again, the best cutoff is the x-value that maximizes the distance from the dia
   - The important metric is the probability that our estimate does __not__ match reality
   
 <br>
-> - Bayesian: goal is to approximately objective truth by updating prior probability with new evidence
+> - Bayesian: goal is to approximate objective truth by updating prior probability with new evidence
   - The important metric is the probability that our subjective experience matches reality
 
 <br>
@@ -644,11 +652,11 @@ __Again, the best cutoff is the x-value that maximizes the distance from the dia
   - If your patient has a positive test, there is a 75% chance of having disease.
 
 --- 
-## Basic structure involves adding new information to probability
+## Involves adding new information to existing probability
 
 <br>
 > - Start with pre-test probability
-  - This data is available all over the place
+  - This data is available all over the place (e.g. any prevalence data)
   - Example: Region 6 prevalence of influenza right now is __\(\approx 4\%\)__
   
 <br>
@@ -660,7 +668,7 @@ __Again, the best cutoff is the x-value that maximizes the distance from the dia
     - __\(LR- = \frac{1 - sensitivity}{specificity} = \frac{1 - 0.7}{0.95} = 0.32\)__
 
 ---
-## Adjust probability with the following procedure
+## Adjust the probability of disease with the following procedure
 
 <br>
 > - Pre-test Probability \(\rightarrow\) Pre-test Odds \(\rightarrow\) Pre-test Odds x LR \(\rightarrow\) Post-test Odds \(\rightarrow\) Post-test Probability
@@ -671,7 +679,7 @@ __Again, the best cutoff is the x-value that maximizes the distance from the dia
 
 <br>
 > - Positive test: \(0.04 \rightarrow 0.04/0.96 = 0.042 \rightarrow 0.042 * 14 = 0.583 \rightarrow 0.583/1.583 = 0.37\)
-  - Post-test probability following __positive__ test: __\(35\%\)__
+  - Post-test probability following __positive__ test: __\(37\%\)__
 
 <br>
 > - Negative test: \(0.04 \rightarrow 0.04/0.96 = 0.042 \rightarrow 0.042 * 0.32 = 0.0134 \rightarrow 0.0134/1.0134 = 0.0132\)
@@ -957,7 +965,7 @@ Mortality is the **risk** of death. Then, the relative risk is:
 --- &radio2
 ## Question #12
 
-What is the absolute risk reduction of having a female physician?
+Controlling for physician characteristics as before, what is the absolute risk reduction of having a female physician?
 
 1. _0.0042_
 2. 0.0142
@@ -981,7 +989,7 @@ Mortality is the **risk** of death. Since this is subtraction it is important to
 --- &radio2
 ## Question #13
 
-Within this study population, on average how many patients would need to be treated by a female physician to save a life?
+Given the information from the previous slide, on average how many patients would need to be treated by a female physician to save a life?
 
 1. 2.4
 2. 8.7
@@ -1009,7 +1017,7 @@ Thus, mortality is the **risk** of death. Since this is subtraction it is import
 --- &radio2
 ## Question #14
 
-Within the context of this study, if we no longer allowed men to treat general medicine patients approximately how long on average would it take for a female physician to save a patient that otherwise would have died under the previous treatment system?
+Given the information from the previous slide, if we no longer allowed men to treat general medicine patients approximately how long on average would it take for a female physician to save a patient that otherwise would have died under the previous treatment system?
 
 1. 2 months
 2. 8 months
